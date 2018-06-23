@@ -7,6 +7,7 @@ author:    Kim SS
 `2017-03-25` Posted
 
 **1. Stratification**
+
 ![](/img/2017-03-25-Confounding_factor_control/슬라이드2.JPG)
 
 
