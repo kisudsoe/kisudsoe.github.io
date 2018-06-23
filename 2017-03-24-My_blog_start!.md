@@ -1,4 +1,4 @@
-[Home](https://kisudsoe.github.io)
+<a href="https://kisudsoe.github.io"><img src="img/favicon.png" width="30px" /></a>[Home](https://kisudsoe.github.io)
 
 `2017-03-24` Posted
 

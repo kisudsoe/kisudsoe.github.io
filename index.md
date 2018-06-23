@@ -1,4 +1,4 @@
-# Kim SS's Archive
+# <img src="img/favicon.png" width="60px" /> Kim SS's Archive
 
 ### Logs
 
