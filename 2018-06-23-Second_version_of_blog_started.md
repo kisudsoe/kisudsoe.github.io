@@ -1,8 +1,8 @@
----
-title:     Second version of blog started
-subtitle:  Simplified using markdown-html pipeline
-author:    Kim SS
----
+[Home](https://kisudsoe.github.io)
+
+# Second version of blog started
+
+> I simplified using markdown-html pipeline.
 
 `2018-06-23` Posted
 
