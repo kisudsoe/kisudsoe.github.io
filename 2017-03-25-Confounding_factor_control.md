@@ -1,10 +1,10 @@
----
-title:     Confounding factor control
-subtitle:  How to control confounding factors of my data?
-author:    Kim SS
----
+<a href="https://kisudsoe.github.io"><img src="img/favicon.png" width="30px" /></a>[Home](https://kisudsoe.github.io)
 
 `2017-03-25` Posted
+
+# Confounding factor control
+
+Here, we are going to watch how to control confounding factors.
 
 **1. Stratification**
 ![](/img/2017-03-25-Confounding_factor_control/슬라이드2.JPG)
