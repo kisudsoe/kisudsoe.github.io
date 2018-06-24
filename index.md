@@ -4,6 +4,7 @@
 
 ### Logs
 
+- [2017-03-01 | My Post-Doc career started!](https://kisudsoe.github.io/2017-03-01-My_Post-Doc_career_started!.html)
 - [2017-03-24 | My_blog_start!](https://kisudsoe.github.io/2017-03-24-My_blog_start!.html)
 - [2018-06-23 | Second_version_of_blog_started](https://kisudsoe.github.io/2018-06-23-Second_version_of_blog_started.html)
 
@@ -13,4 +14,4 @@
 
 ### R
 
-- Venn diagram
+- Venn diagram `Comming soon!`
