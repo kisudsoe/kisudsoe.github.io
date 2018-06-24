@@ -4,8 +4,9 @@
 
 # About me
 
-Name: Kim SS
-My role: Aging research using Bioinformatics
+Name:     Kim SS
+
+My role:   Aging research using Bioinformatic tools
 
 
 
