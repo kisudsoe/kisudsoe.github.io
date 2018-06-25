@@ -14,7 +14,7 @@ My role:   Aging research using Bioinformatic tools
 
 I am now a member of Functional Genomics Laboratory. I want understand how living creatures aging and how retard it. To understand the matters, I'm trying to compile and mine bio-big-data. From 2007, I was trained for analyzing microarray data. My current research focus is on chronological aging process as well as longevity (e.g. Caloric Restriction) machanism in mice major tissues and yeast cells.
 
-[Homepage](http://ckaging.korea.ac.kr) | [Github](https://github.com/kisudsoe) | 
+| <img src="img/url-icon.png" height=20px/> [Homepage](http://ckaging.korea.ac.kr) | <img src="img/github-icon.png" height=35px/> [Github](https://github.com/kisudsoe) | 
 
 
 
