@@ -11,7 +11,10 @@
 ### Statistics
 
 - [Confounding factor control](https://kisudsoe.github.io/(Stat)_Confounding_factor_control.html)
+- Permutation test and Monte Carlo simulation `Plan`
 
 ### R
 
 - Venn diagram `Comming soon!`
+- Heatmap `Plan`
+
