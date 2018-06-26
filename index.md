@@ -15,6 +15,7 @@
 
 ### R
 
+- [Data manipulation tutorial](https://kisudsoe.github.io/(R)_Data_manipulation_tutorial.html)
 - Venn diagram `Comming soon!`
 - Heatmap `Plan`
 
