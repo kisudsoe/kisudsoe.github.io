@@ -1,6 +1,8 @@
 # <img src="img/favicon.png" width="60px" /> Kim SS's Archive
 
-| [My Profile](https://kisudsoe.github.io/MyProfile.html) | 
+| <img src="img/github-icon.png" height=40px />[My Profile](https://kisudsoe.github.io/MyProfile.html) | <img src="img/tiddly-icon.png" height=25px /> [MyTiddly](https://kisudsoe.github.io/Tiddly.html) |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| Descriptions about me                                        | Collecting everything here                                   |
 
 ### Logs
 
