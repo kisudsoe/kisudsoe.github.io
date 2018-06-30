@@ -127,7 +127,6 @@ Here is an example for the linear regression by Hoffman JM *et al.* (2014).
 
 <div id="disqus_thread"></div>
 <script>
-
 (function() { // DON'T EDIT BELOW THIS LINE
 var d = document, s = d.createElement('script');
 s.src = 'https://kisudsoe-github-io.disqus.com/embed.js';
