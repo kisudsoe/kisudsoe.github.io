@@ -123,3 +123,17 @@ Here is an example for the linear regression by Hoffman JM *et al.* (2014).
 
 ![2](/img/2017-03-25-Confounding_factor_control/슬라이드17.JPG)
 
+---
+
+<div id="disqus_thread"></div>
+<script>
+
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://kisudsoe-github-io.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<script id="dsq-count-scr" src="//kisudsoe-github-io.disqus.com/count.js" async></script>
