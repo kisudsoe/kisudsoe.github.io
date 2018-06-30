@@ -2,6 +2,8 @@
 
 `2017-03-25` Posted | `2018-06-24` Add description
 
+[TOC]
+
 # Confounding factor control
 
 Here, we are going to watch how to control confounding factors.
@@ -120,3 +122,4 @@ Here is an example for the linear regression by Hoffman JM *et al.* (2014).
 
 
 ![2](/img/2017-03-25-Confounding_factor_control/슬라이드17.JPG)
+
