@@ -2,6 +2,8 @@
 
 `2017-03-25` Posted | `2018-06-24` Add description
 
+[TOC]
+
 # Confounding factor control
 
 Here, we are going to watch how to control confounding factors.
