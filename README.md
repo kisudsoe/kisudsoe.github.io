@@ -26,7 +26,7 @@ I am now a member of Functional Genomics Laboratory. I want understand how livin
 
 
 
-## What can I do:
+## What I can do:
 
 1. Transcriptome data analysis
 2. Statistical association test
