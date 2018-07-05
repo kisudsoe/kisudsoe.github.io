@@ -1,6 +1,6 @@
 # <img src="img/favicon.png" width="60px" /> Kim SS's Archive
 
-| <img src="img/github-icon.png" height=40px />[My Profile](https://kisudsoe.github.io/MyProfile.html) | <img src="img/tiddly-icon.png" height=25px /> [MyTiddly](https://kisudsoe.github.io/Tiddly.html) |
+| <img src="img/github-icon.png" height=40px />[My Profile](https://kisudsoe.github.io/README.html) | <img src="img/tiddly-icon.png" height=25px /> [MyTiddly](https://kisudsoe.github.io/Tiddly.html) |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | Descriptions about me                                        | Collecting everything here                                   |
 
@@ -21,3 +21,6 @@
 - Venn diagram `Comming soon!`
 - Heatmap `Plan`
 
+---
+
+By Kim SS @ 2017-2018
