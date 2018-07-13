@@ -1,8 +1,11 @@
 # <img src="img/favicon.png" width="60px" /> Kim SS's Archive
 
-| <img src="img/github-icon.png" height=40px />[My Profile](https://kisudsoe.github.io/README.html) | <img src="img/tiddly-icon.png" height=25px /> [MyTiddly](https://kisudsoe.github.io/Tiddly.html) |
-| ------------------------------------------------------------ | ------------------------------------------------------------ |
-| Descriptions about me                                        | Collecting everything here                                   |
+
+
+|                            Links                             | Description             |
+| :----------------------------------------------------------: | ----------------------- |
+| <img src="img/github-icon.png" height=40px />[My Profile](https://kisudsoe.github.io/README.html) | Descriptions about me   |
+| <img src="img/tiddly-icon.png" height=25px /> [MyTiddly](https://kisudsoe.github.io/Tiddly.html) | My essays here (Korean) |
 
 ### Logs
 
@@ -18,6 +21,7 @@
 ### R
 
 - [Data manipulation tutorial](https://kisudsoe.github.io/(R)_Data_manipulation_tutorial.html)
+- R version update and DEV environment settings `Comming soon!`
 - Venn diagram `Comming soon!`
 - Heatmap `Plan`
 
