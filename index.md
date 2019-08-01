@@ -27,7 +27,7 @@ Hello! This is S Kim's personal blog spot. Please enjoy my knowledges!
 
 ### Genetics
 
-- [Omnigenic inheritance](https://kisudsoe.github.io/(Stat)_Omnigenic_inheritance.html) `2019-08-01`
+- [Omnigenic inheritance](https://kisudsoe.github.io/(Genetics)_Omnigenic_inheritance.html) `2019-08-01`
 
 ### Statistics
 
