@@ -21,6 +21,10 @@ Hello! This is S Kim's personal blog spot. Please enjoy my knowledges!
 
 ## Stories
 
+### Settings
+
+- Programming Environments
+
 ### Statistics
 
 - [Confounding factor control](https://kisudsoe.github.io/(Stat)_Confounding_factor_control.html)
