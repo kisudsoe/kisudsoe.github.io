@@ -1,8 +1,8 @@
 # [<img src="img/favicon.png" width="60px" />](http://kisudsoe.github.io) About me
 
-Name:     Kim SS
+Name:       Kim SS
 
-My work:   Aging research using Bioinformatic tools
+My work:  Bioinformatics for Aging research
 
 
 
@@ -10,16 +10,15 @@ My work:   Aging research using Bioinformatic tools
 
 I am now a member of Functional Genomics Laboratory. I want understand how living creatures aging and how retard it. To understand the matters, I'm trying to compile and mine bio-big-data. From 2007, I was trained for analyzing microarray data. My current research focus is on chronological aging process as well as longevity (e.g. Caloric Restriction) machanism in mice major tissues and yeast cells.
 
-| My Links                                                     |
-| ------------------------------------------------------------ |
-| <img src="img/url-icon.png" height=20px/>  [Homepage](http://ckaging.korea.ac.kr) : Functional genomics lab. |
-| <img src="img/github-icon.png" height=35px/>[Github](https://github.com/kisudsoe) : Here is my github profile |
+| <img src="img/url-icon.png" height=20px/> [Homepage](http://ckaging.korea.ac.kr) | [<img src="img/github-icon.png" height=35px/>Github](https://github.com/kisudsoe) |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| Functional genomics lab.                                     | My github profile.                                           |
 
 
 
 ## My research interests are:
 
-- Aging biology
+- Aging/Longevity biology
 - Meta-analysis using transcriptome data
 - Molecular signaling networks
 - Evolutionary conserved features
@@ -35,4 +34,4 @@ I am now a member of Functional Genomics Laboratory. I want understand how livin
 
 ---
 
-By Kim SS @ 2017-2018
+By Kim SS @ 2017-2019
