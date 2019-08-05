@@ -2,14 +2,14 @@
 <html>
 <head>
 <meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
-<title>index</title><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; }
+<title>index</title><link href='https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; }
 html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
-body { margin: 0px; padding: 0px; height: auto; bottom: 0px; top: 0px; left: 0px; right: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; tab-size: 4; }
+body { margin: 0px; padding: 0px; height: auto; bottom: 0px; top: 0px; left: 0px; right: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; }
 iframe { margin: auto; }
 a.url { word-break: break-all; }
 a:active, a:hover { outline: 0px; }
 .in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
-#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 40px; }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; word-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 40px; }
 #write.first-line-indent p { text-indent: 2em; }
 #write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
 #write.first-line-indent li { margin-left: 2em; }
@@ -18,19 +18,17 @@ body.typora-export { padding-left: 30px; padding-right: 30px; }
 .typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
 @media screen and (max-width: 500px) {
   body.typora-export { padding-left: 0px; padding-right: 0px; }
-  #write { padding-left: 20px; padding-right: 20px; }
   .CodeMirror-sizer { margin-left: 0px !important; }
   .CodeMirror-gutters { display: none !important; }
 }
-#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write li > figure:first-child { margin-top: -20px; }
 #write ol, #write ul { position: relative; }
 img { max-width: 100%; vertical-align: middle; }
-button, input, select, textarea { color: inherit; font: inherit; }
+button, input, select, textarea { color: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; }
 input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
 *, ::after, ::before { box-sizing: border-box; }
 #write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
 #write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
-p { line-height: inherit; }
 h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 2; }
 p { orphans: 4; }
 h1 { font-size: 2rem; }
@@ -53,7 +51,6 @@ thead { display: table-header-group; }
 table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
 table.md-table td { min-width: 32px; }
 .CodeMirror-gutters { border-right: 0px; background-color: inherit; }
-.CodeMirror-linenumber { user-select: none; }
 .CodeMirror { text-align: left; }
 .CodeMirror-placeholder { opacity: 0.3; }
 .CodeMirror pre { padding: 0px 4px; }
@@ -88,6 +85,7 @@ blockquote > :first-child, li > :first-child { margin-top: 0px; }
   html.blink-to-pdf { font-size: 13px; }
   .typora-export #write { padding-left: 32px; padding-right: 32px; padding-bottom: 0px; break-after: avoid; }
   .typora-export #write::after { height: 0px; }
+  @page { margin: 20mm 0px; }
 }
 .footnote-line { margin-top: 0.714em; font-size: 0.7em; }
 a img, img a { cursor: pointer; }
@@ -100,7 +98,7 @@ p > .md-image:only-child { display: inline-block; width: 100%; }
 [contenteditable="true"]:active, [contenteditable="true"]:focus { outline: 0px; box-shadow: none; }
 .md-task-list-item { position: relative; list-style-type: none; }
 .task-list-item.md-task-list-item { padding-left: 0px; }
-.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); }
 .math { font-size: 1rem; }
 .md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
 .md-toc-content { position: relative; margin-left: 0px; }
@@ -136,12 +134,12 @@ a.md-print-anchor { white-space: pre !important; border-width: initial !importan
 .MathJax_SVG_Display, .md-inline-math .MathJax_SVG_Display { width: auto; margin: inherit; display: inline-block !important; }
 .MathJax_SVG .MJX-monospace { font-family: var(--monospace); }
 .MathJax_SVG .MJX-sans-serif { font-family: sans-serif; }
-.MathJax_SVG { display: inline; font-style: normal; font-weight: 400; line-height: normal; zoom: 90%; text-indent: 0px; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; overflow-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0px; min-height: 0px; border: 0px; padding: 0px; margin: 0px; }
-.MathJax_SVG * { transition: none 0s ease 0s; }
-.MathJax_SVG_Display svg { vertical-align: middle !important; margin-bottom: 0px !important; margin-top: 0px !important; }
+.MathJax_SVG { display: inline; font-style: normal; font-weight: 400; line-height: normal; zoom: 90%; text-indent: 0px; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0px; min-height: 0px; border: 0px; padding: 0px; margin: 0px; }
+.MathJax_SVG * { transition: none; }
+.MathJax_SVG_Display svg { vertical-align: middle !important; margin-bottom: 0px !important; }
 .os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
 .md-diagram-panel > svg { max-width: 100%; }
-[lang="mermaid"] svg, [lang="flow"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] svg, [lang="flow"] svg { max-width: 100%; }
 [lang="mermaid"] .node text { font-size: 1rem; }
 table tr th { border-bottom: 0px; }
 video { max-width: 100%; display: block; margin: 0px auto; }
@@ -150,6 +148,10 @@ iframe { max-width: 100%; width: 100%; border: none; }
 
 
 :root { --side-bar-bg-color: #fafafa; --control-text-color: #777; }
+@font-face { font-family: "Open Sans"; font-style: normal; font-weight: normal; src: local("Open Sans Regular"), url("./github/400.woff") format("woff"); }
+@font-face { font-family: "Open Sans"; font-style: italic; font-weight: normal; src: local("Open Sans Italic"), url("./github/400i.woff") format("woff"); }
+@font-face { font-family: "Open Sans"; font-style: normal; font-weight: bold; src: local("Open Sans Bold"), url("./github/700.woff") format("woff"); }
+@font-face { font-family: "Open Sans"; font-style: italic; font-weight: bold; src: local("Open Sans Bold Italic"), url("./github/700i.woff") format("woff"); }
 html { font-size: 16px; }
 body { font-family: "Open Sans", "Clear Sans", "Helvetica Neue", Helvetica, Arial, sans-serif; color: rgb(51, 51, 51); line-height: 1.6; }
 #write { max-width: 860px; margin: 0px auto; padding: 30px 30px 100px; }
@@ -189,12 +191,12 @@ table tr th:last-child, table tr td:last-child { margin-bottom: 0px; }
 .code-tooltip { box-shadow: rgba(0, 28, 36, 0.3) 0px 1px 1px 0px; border-top: 1px solid rgb(238, 242, 242); }
 .md-fences, code, tt { border: 1px solid rgb(231, 234, 237); background-color: rgb(248, 248, 248); border-radius: 3px; padding: 2px 4px 0px; font-size: 0.9em; }
 code { background-color: rgb(243, 244, 244); padding: 0px 2px; }
-.md-fences { margin-bottom: 15px; margin-top: 15px; padding-top: 8px; padding-bottom: 6px; }
+.md-fences { margin-bottom: 15px; margin-top: 15px; padding: 8px 1em 6px; }
 .md-task-list-item > input { margin-left: -1.3em; }
 @media print {
   html { font-size: 13px; }
   table, pre { break-inside: avoid; }
-  pre { overflow-wrap: break-word; }
+  pre { word-wrap: break-word; }
 }
 .md-fences { background-color: rgb(248, 248, 248); }
 #write pre.md-meta-block { padding: 1rem; font-size: 85%; line-height: 1.45; background-color: rgb(247, 247, 247); border: 0px; border-radius: 3px; color: rgb(119, 119, 119); margin-top: 0px !important; }
@@ -219,10 +221,14 @@ header, .context-menu, .megamenu-content, footer { font-family: "Segoe UI", Aria
 #md-notification .btn { border: 0px; }
 .dropdown-menu .divider { border-color: rgb(229, 229, 229); }
 
+
+
+
+
  .typora-export li, .typora-export p, .typora-export,  .footnote-line {white-space: normal;} 
 </style>
 </head>
 <body class='typora-export os-windows' >
-<div  id='write'  class = 'is-node'><h1><a name="%3Cimg-src=%22img/favicon.png%22-width=%2260px%22-/%3E-s-kim%27s-archive" class="md-header-anchor"></a><img src="img/favicon.png" width="60px" /><span> S Kim&#39;s Archive</span></h1><p><span>Hello! This is S Kim&#39;s personal blog spot. Please enjoy my knowledges!</span></p><h3><a name="my-blog-news" class="md-header-anchor"></a><span>My Blog News</span></h3><ul><li><a href='https://kisudsoe.github.io/2017-03-01-My_Post-Doc_career_started!.html'><span>2017-03-01 | My Post-Doc career started!</span></a></li><li><a href='https://kisudsoe.github.io/2017-03-24-My_blog_start!.html'><span>2017-03-24 | My_blog_start!</span></a></li><li><a href='https://kisudsoe.github.io/2018-06-23-Second_version_of_blog_started.html'><span>2018-06-23 | Second_version_of_blog_started</span></a></li></ul><p>&nbsp;</p><h2><a name="about-me,-myself" class="md-header-anchor"></a><span>About Me, Myself</span></h2><figure><table><thead><tr><th style='text-align:center;' ><span>Links</span></th><th><span>Description</span></th></tr></thead><tbody><tr><td style='text-align:center;' ><img src="img/github-icon.png" height=40px /><a href='https://kisudsoe.github.io/README.html'><span>My Profile</span></a></td><td><span>Descriptions about me.</span></td></tr><tr><td style='text-align:center;' ><img src="img/tiddly-icon.png" height=25px /><span> </span><a href='https://kisudsoe.github.io/Tiddly_ko.html'><span>MyTiddly</span></a></td><td><span>My Korean essays here.</span></td></tr></tbody></table></figure><p>&nbsp;</p><h2><a name="story-archive" class="md-header-anchor"></a><span>Story Archive</span></h2><figure><table><thead><tr><th><span>Settings</span></th><th><span>Genetics</span></th><th><span>Statistics</span></th><th><span>R</span></th></tr></thead><tbody><tr><td><span>R version update and DEV environment settings </span><code>Comming soon!</code></td><td><a href='https://kisudsoe.github.io/(Genetics)_Omnigenic_inheritance.html'><span>Omnigenic inheritance</span></a><span> </span><code>2019-08-01</code></td><td><a href='https://kisudsoe.github.io/(Stat)_Confounding_factor_control.html'><span>Confounding factor control</span></a><span> </span><code>2018-06-24</code></td><td><a href='https://kisudsoe.github.io/(R)_Data_manipulation_tutorial.html'><span>Data manipulation tutorial</span></a><span> </span><code>2018-06-26</code></td></tr><tr><td>&nbsp;</td><td><span>Quantitative traits </span><code>Plan</code></td><td><span>Permutation test and Monte Carlo simulation </span><code>Plan</code></td><td><span>Venn diagram </span><code>Comming soon!</code></td></tr><tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td><span>Heatmap </span><code>Plan</code></td></tr></tbody></table></figure><ul><li><span>Python </span><code>Plan</code></li><li><span>AutoHotKey </span><code>Plan</code></li></ul><p>&nbsp;</p><hr /><p><span>By Kim SS @ 2017-2019. All rights reserved.</span></p></div>
+<div  id='write'  class = 'is-node'><h1><a name='header-n0' class='md-header-anchor '></a><img src="img/favicon.png" width="60px" /> S Kim&#39;s Archive</h1><p>Hello! This is S Kim&#39;s personal blog spot. Please enjoy my knowledges!</p><h3><a name='header-n3' class='md-header-anchor '></a>My Blog News</h3><ul><li><a href='https://kisudsoe.github.io/2017-03-01-My_Post-Doc_career_started!.html'>2017-03-01 | My Post-Doc career started!</a></li><li><a href='https://kisudsoe.github.io/2017-03-24-My_blog_start!.html'>2017-03-24 | My_blog_start!</a></li><li><a href='https://kisudsoe.github.io/2018-06-23-Second_version_of_blog_started.html'>2018-06-23 | Second_version_of_blog_started</a></li></ul><p>&nbsp;</p><h2><a name='header-n12' class='md-header-anchor '></a>About Me, Myself</h2><figure><table><thead><tr><th style='text-align:center;' >Links</th><th>Description</th></tr></thead><tbody><tr><td style='text-align:center;' ><img src="img/github-icon.png" height=40px /><a href='https://kisudsoe.github.io/README.html'>My Profile</a></td><td>Descriptions about me.</td></tr><tr><td style='text-align:center;' ><img src="img/tiddly-icon.png" height=25px /> <a href='https://kisudsoe.github.io/Tiddly_ko.html'>MyTiddly</a></td><td>My Korean essays here.</td></tr></tbody></table></figure><p>&nbsp;</p><h2><a name='header-n24' class='md-header-anchor '></a>Story Archive </h2><p><img src="img/tiddly-icon.png" height=25px /> <a href='https://kisudsoe.github.io/Tiddly_papers.html'>Tiddly_papers</a>: Draft archive</p><figure><table><thead><tr><th>Settings</th><th>Genetics</th><th>Statistics</th><th>R</th></tr></thead><tbody><tr><td>R version update and DEV environment settings <code>Comming soon!</code></td><td><a href='https://kisudsoe.github.io/(Genetics)_Omnigenic_inheritance.html'>Omnigenic inheritance</a> <code>2019-08-01</code></td><td><a href='https://kisudsoe.github.io/(Stat)_Confounding_factor_control.html'>Confounding factor control</a> <code>2018-06-24</code></td><td><a href='https://kisudsoe.github.io/(R)_Data_manipulation_tutorial.html'>Data manipulation tutorial</a> <code>2018-06-26</code></td></tr><tr><td>&nbsp;</td><td>Quantitative traits <code>Plan</code></td><td>Permutation test and Monte Carlo simulation <code>Plan</code></td><td>Venn diagram <code>Comming soon!</code></td></tr><tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Heatmap <code>Plan</code></td></tr></tbody></table></figure><ul><li>Python <code>Plan</code></li><li>AutoHotKey <code>Plan</code></li></ul><p>&nbsp;</p><hr /><p>By Kim SS @ 2017-2019. All rights reserved.</p></div>
 </body>
 </html>

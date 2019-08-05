@@ -19,7 +19,9 @@ Hello! This is S Kim's personal blog spot. Please enjoy my knowledges!
 
 
 
-## Story Archive
+## Story Archive 
+
+<img src="img/tiddly-icon.png" height=25px /> [Tiddly_papers](https://kisudsoe.github.io/Tiddly_papers.html): Draft archive
 
 | Settings                                                     | Genetics                                                     | Statistics                                                   | R                                                            |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
