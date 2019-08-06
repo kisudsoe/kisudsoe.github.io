@@ -139,6 +139,8 @@ Error message and password prompt
 
 <li>$:/config/Navigation/openLinkFromOutsideRiver</li>
 
+<li>$:/config/RelinkOnRename</li>
+
 <li>$:/core</li>
 
 <li>$:/DefaultTiddlers</li>
@@ -357,6 +359,8 @@ Error message and password prompt
 
 <li>$:/themes/tiddlywiki/vanilla</li>
 
+<li>$:/themes/tiddlywiki/vanilla/metrics/lineheight</li>
+
 <li>$:/themes/tiddlywiki/vanilla/options/sidebarlayout</li>
 
 <li>$:/themes/tiddlywiki/vanilla/options/stickytitles</li>
@@ -365,7 +369,7 @@ Error message and password prompt
 
 <li>References</li>
 
-<li>Whole genome deep learning</li>
+<li>Zou et al, 2019, Nature Genetics</li>
 
 </ul>
 </p>
@@ -379,6 +383,9 @@ Error message and password prompt
 <div id="storeArea" style="display:none;">
 <div created="20190805050104380" modified="20190805050109845" title="$:/config/Navigation/openLinkFromOutsideRiver">
 <pre>bottom</pre>
+</div>
+<div created="20190805145438458" modified="20190805145438458" title="$:/config/RelinkOnRename">
+<pre>yes</pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="" description="TiddlyWiki5 core" list="readme" plugin-priority="0" plugin-type="plugin" title="$:/core" type="application/json" version="5.1.19">
 <pre>{
@@ -9466,14 +9473,14 @@ Error message and password prompt
 <div created="20190805045751710" modified="20190805045754878" title="$:/SiteTitle">
 <pre>Papers</pre>
 </div>
-<div created="20190805050243155" modified="20190805050243155" title="$:/state/showeditpreview">
+<div created="20190805050243155" modified="20190805202648363" title="$:/state/showeditpreview">
 <pre>yes</pre>
 </div>
 <div created="20190805045850698" modified="20190805050021566" title="$:/state/tab--1963855381">
 <pre>$:/themes/tiddlywiki/vanilla/themetweaks</pre>
 </div>
-<div created="20190805045848352" modified="20190805050049915" title="$:/state/tab-1749438307">
-<pre>$:/core/ui/ControlPanel/Settings</pre>
+<div created="20190805045848352" modified="20190805201927820" title="$:/state/tab-1749438307">
+<pre>$:/core/ui/ControlPanel/Appearance</pre>
 </div>
 <div created="20190805053838804" modified="20190805053838804" title="$:/state/tab/moresidebar-1850697562">
 <pre>$:/core/ui/MoreSideBar/Tags</pre>
@@ -9481,7 +9488,7 @@ Error message and password prompt
 <div created="20190805050127734" modified="20190805053836957" title="$:/state/tab/sidebar--595412856">
 <pre>$:/core/ui/SideBar/More</pre>
 </div>
-<div created="20190805053900537" list="References [[Whole genome deep learning]]" modified="20190805053906071" title="$:/StoryList">
+<div created="20190805202614349" list="References [[Zou et al, 2019, Nature Genetics]]" modified="20190805202840441" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20190805050017364" modified="20190805050017364" title="$:/temp/HidePluginWarning">
@@ -10331,6 +10338,9 @@ This plugin also requires the JSZip plugin ([[$:/plugins/tiddlywiki/jszip]]) to 
     }
 }</pre>
 </div>
+<div created="20190805201934979" modified="20190805202844064" title="$:/themes/tiddlywiki/vanilla/metrics/lineheight">
+<pre>20px</pre>
+</div>
 <div created="20190805045912791" modified="20190805045912791" title="$:/themes/tiddlywiki/vanilla/options/sidebarlayout">
 <pre>fluid-fixed</pre>
 </div>
@@ -10340,20 +10350,119 @@ This plugin also requires the JSZip plugin ([[$:/plugins/tiddlywiki/jszip]]) to 
 <div created="20190805045954299" modified="20190805045955114" title="$:/view">
 <pre>classic</pre>
 </div>
-<div created="20190805045827414" modified="20190805050939541" tags="toc" title="References" type="text/x-markdown">
-<pre># Genetics
+<div created="20190805045827414" modified="20190805202630925" tags="toc" title="References" type="text/vnd.tiddlywiki">
+<pre>! Genetics
 
-# Machine learning
+! Machine learning
 
-- `Reading` [Whole genome deep learning](Zhou et al, 2019, Nature Genetics), [https://doi.org/10.1038/s41588-019-0420-0](https://doi.org/10.1038/s41588-019-0420-0)
-- `Plan to read`
+* `Reading` [[Whole genome deep learning|Zou et al, 2019, Nature Genetics]], https://doi.org/10.1038/s41588-018-0295-5
+* `Plan to read`
 
-# Published
+! Published
 
-- </pre>
+* </pre>
 </div>
-<div created="20190805053924459" modified="20190805054002259" tags="[[machine learning]] review" title="Whole genome deep learning" type="text/x-markdown">
-<pre>Reading now..</pre>
+<div created="20190805202650892" modified="20190805230142847" tags="review [[machine learning]]" title="Zou et al, 2019, Nature Genetics" type="text/x-markdown">
+<pre>`8/5/2019`
+
+* Whole genome deep learning
+* Zou J, …, Telenti A, 2019, Nature genetics, [https://doi.org/10.1038/s41588-018-0295-5](https://doi.org/10.1038/s41588-018-0295-5)
+
+
+# Abstract
+
+- We discuss successful applications in the fields of regulatory genomics, variant calling and pathogenicity scores.
+- We include general guidance for how to effectively use deep learning methods as well as a practical guide to tools and resources.
+- Interactive online tutorial: https://??
+
+
+# Introduction
+
+- A survey of deep learning in the biomedical field, which has been broadly covered in recent reviews [1-5].
+  - [1] Angermueller et al., 2016, Mol. Syst. Biol., Deep learning for computational biology.
+  - [2] Ching et al., 2018, J. R. Soc. Interface, Opportunities and obstacles for deep learning in biology and medicine.
+  - [3] Telenti et al., 2018, Hum. Mol. Genet., Deep learning of genomic variation and regulatory network data.
+  - [4] Yue and Wang, 2018, Arxiv, Deep learning for genomics: a concise overview. Preprint at https://arxiv.org/abs/1802.00810
+  - [5] Camacho et al., 2018, Cell, Next-generation machine learning for biological networks.
+
+-----
+# 1. Deep learning as a class of machine learning methods
+
+- Machine learning techniques have been extensively used in genomics research [3,6]
+  - [3] Telenti et al., 2018, Hum. Mol. Genet., Deep learning of genomic variation and regulatory network data.
+  - [6] Libbrecht et al., 2015, Nat. Rev. Genet., Machine learning applications in genetics and genomics.
+
+- Machine learning tasks fall within two major categories: supervised and unsupervised.
+  - In **supervised learning**, the goal is predicting the label (classification) or response (regression) of each data point by using a provided set of labeled training examples.
+  - In **unsupervised learning**, such as clustering and principal component analysis, the goal is learning inherent patterns within the data themselves.
+
+- The ultimate goal in many machine learning tasks to optimize model performance not on the available data (training performance) but instead on independent datasets (generalization performance).
+  - With this goal, data are randomly split into at least three subsets:
+    1. The **training set** is used for learning the model parameters
+      - detailed discussion on parameter optimization in [1] Angermueller et al., 2016, Mol. Syst. Biol., Deep learning for computational biology.
+    2. The **validation set** is used to select the best model.
+    3. The **test set** is kept aside to estimate the generalization performance (**Fig. 1**).
+  - Machine learning must reach an appropriate balance between model flexibility and the amount of training data.
+    - An overly simple model will underfit and fail to let the data 'speak'.
+    - An overly felxible model will overfit to spurious patterns in the training data and will not generalize.
+
+- Large neural networks, a main form of deep learning, are a class of machine learning algorithms that can make predictions and perform dimensionality reduction.
+  - The key difference between deep learning and standard machine learning methods used in genomics - e.g. support vector machine and logistic regression - is that deep learning models have a higher capacity and are much more flexible.
+  - Typical deep learning models have millions of tranable parameters.
+  - With appropriately curated training data, deep learning can automatically learn features and patterns with less expert handcrafting.
+  - It also requires greater care to train on and to interpret the underlying biology.
+
+-----
+## Box 1. Deep learning in genomics: key elements and guidance
+
+- Large training datasets (typically thousands of examples), curated to remove confounders, are required.
+- The main architectures - feed-forward, convolutional and recurrent - correspond to different assumptions about data.
+- Most genomics data do not require very deep networks.
+- Researchers must be wary of high accuracy due to data imbalance or bias that makes classification too easy.
+- A good practice is to compare against simpler machine learning models on the same dataset.
+- Deep learning can achieve high accuracy, but the interpretation of results is more challenging than for standard statistical models.
+-----
+
+# 2. Setting up deep learning
+
+- Deep learning is an umbrella term that refers to the recent advances in neural networks and the corresponding training platforms (e.g., TransorFlow and PyTorch).
+
+- The starting point of a neural network is an articial neuron, which takes as input a vector of real values and **computes the weighted average** of these values followed **by a nonlinear transformation**, which can be a simple threshold [7].
+  - [7] Goodfellow et al., 2016, MIT Press, Deep learning.
+  - The weights are the parameters of the model that are learned during training.
+
+- The power of neural networks stems from individual neurons being highly modular and composable, despite their simplicity [8].
+  - [8] LeCun et al., 2015, Nature, Deep leaning.
+  - The output of one neuron can be directly fed as input into other neurons.
+  - By composing neurons together, a newral network is created.
+
+- In genomics, the input might be a DNA sequence, inwhich the nucleotides A, C, T and G are encoded as [1,0,0,0], [0,1,0,0], [0,0,1,0] and [0,0,0,1].
+  - Neurons that directly read in the data input are called the first, or input, layer.
+  - Layer two consists of neurons that are also referred to as hidden layers.
+  - The ouput of the neural network is the prediction of interest, e.g., whether the input DNA is an enhancer.
+
+-----
+## Box 2. Vocabulary and concepts
+
+- **Artificial neuron**: A simple mathmetical function that takes a vector as input and ouputs a transformed wieghted sum of the vector. The weights are the neuron's parameters.
+- **Deep learning**: Neural networks with multiple layers of artificial neurons. The ouput of one layer is fed as input into the next layer to achieve areater flexibility.
+- **Cross-validation**: A common machine learning strategy wherein the dataset is split multiple times into training and validation sets. The average validation performance across the multiple splits is used to select the final model.
+- **Back-propagation**: A common method to train neural networks by updating its parameters (i.e., weights) by using the derivative of the network's performance with respect to the parameters.
+- **Feed-forward neural network**: The most flexible class of neural networks, wherein each neuron can have arbitrary weights.
+- **Convolutional neural network**: A class of neural networks with cycle that can process inputs of varying lengths.
+- **Recurrent neural network**: A class of neural netowrks with cycles that can process inputs of varying lenghts.
+- **Autoencoder**: A class of neural networks that performs nonlinear dimensionality reduction.
+- **Feature importance**: A saliency score for each input feature (for example, each nucleotide) that measures the extent to which changes in that feature affect the prediction.
+-----
+
+**Three architectures of neuroal netowrk**
+
+- There are three common families of architectures for connecting neurons in to a network:
+  1. 
+
+
+
+</pre>
 </div>
 
 </div>
