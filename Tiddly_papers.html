@@ -151,7 +151,13 @@ Error message and password prompt
 
 <li>$:/plugins/tiddlywiki/codemirror-mode-markdown</li>
 
+<li>$:/plugins/tiddlywiki/comments</li>
+
+<li>$:/plugins/tiddlywiki/dynaview</li>
+
 <li>$:/plugins/tiddlywiki/markdown</li>
+
+<li>$:/plugins/tiddlywiki/stacked-view</li>
 
 <li>$:/SiteSubtitle</li>
 
@@ -159,7 +165,13 @@ Error message and password prompt
 
 <li>$:/state/showeditpreview</li>
 
+<li>$:/state/sidebar</li>
+
 <li>$:/state/tab--1963855381</li>
+
+<li>$:/state/tab-1163638994</li>
+
+<li>$:/state/tab-1342078386</li>
 
 <li>$:/state/tab-1749438307</li>
 
@@ -370,6 +382,16 @@ Error message and password prompt
 <li>References</li>
 
 <li>Zou et al, 2019, Nature Genetics</li>
+
+<li>Zou et al, 2019, Nature Genetics-1</li>
+
+<li>Zou et al, 2019, Nature Genetics-2</li>
+
+<li>Zou et al, 2019, Nature Genetics-3</li>
+
+<li>Zou et al, 2019, Nature Genetics-4</li>
+
+<li>Zou et al, 2019, Nature Genetics-5</li>
 
 </ul>
 </p>
@@ -9267,8 +9289,8 @@ Error message and password prompt
 <div title="$:/isEncrypted">
 <pre>no</pre>
 </div>
-<div created="20190805045959642" modified="20190805050012476" title="$:/palette">
-<pre>$:/palettes/DarkPhotos</pre>
+<div created="20190805045959642" modified="20190806044424120" title="$:/palette">
+<pre>$:/palettes/Blanca</pre>
 </div>
 <div author="JeremyRuston" dependents="" description="CodeMirror Mode: Markdown Highlighting" list="readme" plugin-type="plugin" title="$:/plugins/tiddlywiki/codemirror-mode-markdown" type="application/json" version="5.1.19">
 <pre>{
@@ -9282,6 +9304,314 @@ Error message and password prompt
         &quot;$:/plugins/tiddlywiki/codemirror-mode-markdown/readme&quot;: {
             &quot;title&quot;: &quot;$:/plugins/tiddlywiki/codemirror-mode-markdown/readme&quot;,
             &quot;text&quot;: &quot;This plugin adds Syntax Highlighting for Markdown tiddlers (text/x-markdown) to the [[CodeMirror|http://codemirror.net]] text editor. It needs the latest [[CodeMirror plugin|$:/plugins/tiddlywiki/codemirror]] to be installed\n\n&quot;
+        }
+    }
+}</pre>
+</div>
+<div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="" description="Comments" list="readme config" plugin-type="plugin" title="$:/plugins/tiddlywiki/comments" type="application/json" version="5.1.19">
+<pre>{
+    &quot;tiddlers&quot;: {
+        &quot;$:/config/Comments/EnableFilter&quot;: {
+            &quot;title&quot;: &quot;$:/config/Comments/EnableFilter&quot;,
+            &quot;text&quot;: &quot;[all[current]!is[system]]\n&quot;
+        },
+        &quot;$:/plugins/tiddlywiki/comments/above-story&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/tiddlywiki/comments/above-story&quot;,
+            &quot;tags&quot;: &quot;$:/tags/AboveStory&quot;,
+            &quot;text&quot;: &quot;&lt;$reveal state=\&quot;$:/config/Comments/EnableWikiComments\&quot; type=\&quot;match\&quot; text=\&quot;yes\&quot; default=\&quot;no\&quot;&gt;\n&lt;$tiddler tiddler=\&quot;$:/SiteTitle\&quot;&gt;\n&lt;$transclude tiddler=\&quot;$:/plugins/tiddlywiki/comments/comments-template\&quot; mode=\&quot;inline\&quot;/&gt;\n&lt;/$tiddler&gt;\n&lt;/$reveal&gt;\n&quot;
+        },
+        &quot;$:/plugins/tiddlywiki/comments/add-comment-button-actions&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/tiddlywiki/comments/add-comment-button-actions&quot;,
+            &quot;text&quot;: &quot;&lt;$set name=\&quot;username\&quot; value={{$:/status/UserName}} emptyValue=\&quot;(anonymous)\&quot;&gt;\n&lt;$set name=\&quot;target\&quot; filter=\&quot;[&lt;currentTiddler&gt;]\&quot;&gt;\n&lt;$action-createtiddler $basetitle={{{ [[Comment by ']addsuffix&lt;username&gt;addsuffix[' on ']addsuffix&lt;currentTiddler&gt;addsuffix[']] }}} role=\&quot;comment\&quot; list=&lt;&lt;target&gt;&gt; text=\&quot;\&quot; edit-mode=\&quot;yes\&quot;/&gt;\n&lt;/$set&gt;\n&lt;/$set&gt;\n&quot;
+        },
+        &quot;$:/plugins/tiddlywiki/comments/add-comment-button&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/tiddlywiki/comments/add-comment-button&quot;,
+            &quot;text&quot;: &quot;&lt;$reveal state=\&quot;$:/status/IsReadOnly\&quot; type=\&quot;match\&quot; text=\&quot;no\&quot; default=\&quot;no\&quot; tag=\&quot;div\&quot; class=\&quot;tc-comment-button\&quot;&gt;\n&lt;$button class=\&quot;tc-btn-invisible\&quot; actions={{$:/plugins/tiddlywiki/comments/add-comment-button-actions}}&gt;\nadd comment {{$:/core/images/add-comment}}\n&lt;/$button&gt;\n&lt;/$reveal&gt;\n&quot;
+        },
+        &quot;$:/plugins/tiddlywiki/comments/comments-template&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/tiddlywiki/comments/comments-template&quot;,
+            &quot;text&quot;: &quot;&lt;div class=\&quot;tc-comments\&quot;&gt;\n&lt;ol class=\&quot;tc-comment-list\&quot;&gt;\n&lt;$list filter=\&quot;[all[tiddlers+shadows]role[comment]contains&lt;currentTiddler&gt;sort[created]!has[draft.of]]\&quot;&gt;\n&lt;li&gt;\n&lt;div class=\&quot;tc-comment-entry\&quot;&gt;\n&lt;div class=\&quot;tc-comment-entry-heading\&quot;&gt;\n&lt;$link&gt;{{!!creator}} at &lt;$view field=\&quot;modified\&quot; format=\&quot;date\&quot; template=\&quot;0hh:0mm:0ss DDD DDth MMM YYYY\&quot;/&gt;&lt;/$link&gt;\n&lt;$list filter=\&quot;[all[shadows+tiddlers]tag[$:/tags/CommentToolbarButton]!has[draft.of]]\&quot; variable=\&quot;listItem\&quot;&gt;\n&lt;$transclude tiddler=&lt;&lt;listItem&gt;&gt; mode=\&quot;inline\&quot;/&gt;\n&lt;/$list&gt;\n&lt;/div&gt;\n&lt;div class=\&quot;tc-comment-entry-body\&quot;&gt;\n&lt;$reveal type=\&quot;match\&quot; state=\&quot;!!edit-mode\&quot; text=\&quot;yes\&quot;&gt;\n&lt;$edit-text tiddler=&lt;&lt;currentTiddler&gt;&gt; tag=\&quot;textarea\&quot; focus=\&quot;true\&quot;/&gt;\n&lt;/$reveal&gt;\n&lt;$reveal type=\&quot;nomatch\&quot; state=\&quot;!!edit-mode\&quot; text=\&quot;yes\&quot;&gt;\n&lt;$transclude tiddler=&lt;&lt;currentTiddler&gt;&gt; mode=\&quot;block\&quot;/&gt;\n&lt;$transclude tiddler=\&quot;$:/plugins/tiddlywiki/comments/add-comment-button\&quot; mode=\&quot;inline\&quot;/&gt;\n&lt;/$reveal&gt;\n&lt;/div&gt;\n&lt;/div&gt;\n&lt;$transclude tiddler=\&quot;$:/plugins/tiddlywiki/comments/comments-template\&quot; mode=\&quot;inline\&quot;/&gt;\n&lt;/li&gt;\n&lt;/$list&gt;\n&lt;/ol&gt;\n&lt;/div&gt;\n&quot;
+        },
+        &quot;$:/plugins/tiddlywiki/comments/config&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/tiddlywiki/comments/config&quot;,
+            &quot;text&quot;: &quot;\\define select(description,filter)\n&lt;$button&gt;\n&lt;$action-setfield $tiddler=\&quot;$:/config/Comments/EnableFilter\&quot; $value=&lt;&lt;__filter__&gt;&gt;/&gt;\n$description$\n&lt;/$button&gt;\n\\end\n\n! Wiki Comments\n\n&lt;$checkbox tiddler=\&quot;$:/config/Comments/EnableWikiComments\&quot; field=\&quot;text\&quot; checked=\&quot;yes\&quot; unchecked=\&quot;no\&quot; default=\&quot;no\&quot;&gt; &lt;$link to=\&quot;$:/config/Comments/EnableWikiComments\&quot;&gt;Allow wiki-level comments as well as tiddler comments&lt;/$link&gt; &lt;/$checkbox&gt;\n\n! Tiddler Comments\n\nThis filter expression determines which tiddlers will have commenting enabled:\n\n&lt;$edit-text tiddler=\&quot;$:/config/Comments/EnableFilter\&quot; tag=\&quot;input\&quot;/&gt;\n\nOr you can choose a preselected filter:\n\n* &lt;&lt;select \&quot;All tiddlers except system tiddlers\&quot; \&quot;[all[current]!is[system]]\&quot;&gt;&gt;\n* &lt;&lt;select \&quot;Only tiddlers tagged 'commentable'\&quot; \&quot;[all[current]tag[commentable]]\&quot;&gt;&gt;\n* &lt;&lt;select \&quot;Disable all commenting\&quot; \&quot;\&quot;&gt;&gt;\n&quot;
+        },
+        &quot;$:/plugins/tiddlywiki/comments/filter-all-comments&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/tiddlywiki/comments/filter-all-comments&quot;,
+            &quot;tags&quot;: &quot;$:/tags/Filter&quot;,
+            &quot;filter&quot;: &quot;[role[comment]!sort[modified]]&quot;,
+            &quot;description&quot;: &quot;All comments&quot;,
+            &quot;text&quot;: &quot;&quot;
+        },
+        &quot;$:/plugins/tiddlywiki/comments/footer-view-template-segment&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/tiddlywiki/comments/footer-view-template-segment&quot;,
+            &quot;tags&quot;: &quot;$:/tags/ViewTemplate&quot;,
+            &quot;list-after&quot;: &quot;$:/core/ui/ViewTemplate/body&quot;,
+            &quot;text&quot;: &quot;&lt;$list filter={{$:/config/Comments/EnableFilter}} variable=\&quot;ignore\&quot;&gt;\n&lt;div class=\&quot;tc-comments-segment\&quot;&gt;\n&lt;$transclude tiddler=\&quot;$:/plugins/tiddlywiki/comments/add-comment-button\&quot; mode=\&quot;inline\&quot;/&gt;\n&lt;$transclude tiddler=\&quot;$:/plugins/tiddlywiki/comments/comments-template\&quot; mode=\&quot;inline\&quot;/&gt;\n&lt;/div&gt;\n&lt;/$list&gt;&quot;
+        },
+        &quot;$:/plugins/tiddlywiki/comments/header-view-template-segment&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/tiddlywiki/comments/header-view-template-segment&quot;,
+            &quot;tags&quot;: &quot;$:/tags/ViewTemplate&quot;,
+            &quot;list-before&quot;: &quot;$:/core/ui/ViewTemplate/body&quot;,
+            &quot;text&quot;: &quot;&lt;$list filter=\&quot;[all[current]role[comment]]\&quot; variable=\&quot;ignore\&quot;&gt;\n&lt;div class=\&quot;tc-is-comment-header\&quot;&gt;\nThis tiddler is a comment on:\n&lt;ul&gt;\n&lt;$list filter=\&quot;[list&lt;currentTiddler&gt;sort[title]]\&quot;&gt;\n&lt;li&gt;\n&lt;$link to=&lt;&lt;currentTiddler&gt;&gt;&gt;&lt;$text text=&lt;&lt;currentTiddler&gt;&gt;/&gt;&lt;/$link&gt;\n&lt;/li&gt;\n&lt;/$list&gt;\n&lt;/ul&gt;\n&lt;/div&gt;\n&lt;/$list&gt;\n&quot;
+        },
+        &quot;$:/plugins/tiddlywiki/comments/readme&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/tiddlywiki/comments/readme&quot;,
+            &quot;text&quot;: &quot;This plugin provides a simple means for adding threaded comments to tiddlers.\n\n* Click the \&quot;add comment\&quot; button to make a new comment, and then click the \&quot;save\&quot; button to save it\n* You can comment on a tiddler itself, or add a comment to an existing comment\n* The sidebar tab ''Comments'' lists a timeline of all comments\n* Comments are attributed to the username stored in the system tiddler [[$:/status/UserName]]\n* By default, comments are available on all non-system tiddlers. The ''config'' tab lets you customise which tiddlers can accept comments by specifying a filter extension\n* The buttons for adding and editing comments are only available if the system tiddler [[$:/status/IsReadOnly]] is not set to `yes`\n* Use the \&quot;All comments\&quot; option in the $:/AdvancedSearch ''Filter'' tab to see or export all comments\n\n!! Data Model\n\nThe data model employed by the comments plugin is very simple:\n\n* Comment tiddlers are identified by the `role` field being set to `comment`\n* The `list` field of comment tiddlers lists the tiddlers to which this comment applies\n** It is thus possible for a comment to be applied to multiple tiddlers at once\n** The links between comments can be preserved when renaming them by using the relink checkbox in the edit template\n* The `edit-mode` field of comment tiddlers is set to `yes` to display it in edit mode, or `no` to display it in view mode\n* The `saved-text` field is updated when switching to edit mode so that it can be restored if the user cancels\n\n&quot;
+        },
+        &quot;$:/plugins/tiddlywiki/comments/sidebar-segment&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/tiddlywiki/comments/sidebar-segment&quot;,
+            &quot;tags&quot;: &quot;$:/tags/SideBarSegment&quot;,
+            &quot;list-after&quot;: &quot;$:/core/ui/SideBarSegments/site-subtitle&quot;,
+            &quot;text&quot;: &quot;&lt;$reveal state=\&quot;$:/config/Comments/EnableWikiComments\&quot; type=\&quot;match\&quot; text=\&quot;yes\&quot; default=\&quot;no\&quot;&gt;\n&lt;$tiddler tiddler=\&quot;$:/SiteTitle\&quot;&gt;\n&lt;$transclude tiddler=\&quot;$:/plugins/tiddlywiki/comments/add-comment-button\&quot; mode=\&quot;inline\&quot;/&gt;\n&lt;/$tiddler&gt;\n&lt;/$reveal&gt;\n&quot;
+        },
+        &quot;$:/plugins/tiddlywiki/comments/sidebar&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/tiddlywiki/comments/sidebar&quot;,
+            &quot;tags&quot;: &quot;$:/tags/SideBar&quot;,
+            &quot;caption&quot;: &quot;Comments&quot;,
+            &quot;text&quot;: &quot;&lt;div class=\&quot;tc-timeline\&quot;&gt;\n&lt;$list filter=\&quot;[all[tiddlers+shadows]role[comment]has[modified]!sort[modified]eachday[modified]]\&quot;&gt;\n&lt;div class=\&quot;tc-menu-list-item\&quot;&gt;\n&lt;$view field=\&quot;modified\&quot; format=\&quot;date\&quot; template=\&quot;DDth MMM YYYY\&quot;/&gt;\n&lt;$list filter=\&quot;[all[tiddlers+shadows]role[comment]sameday:modified{!!modified}!sort[modified]]\&quot;&gt;\n&lt;div class=\&quot;tc-menu-list-subitem\&quot;&gt;\n&lt;$link&gt;Comment by '&lt;$view field=\&quot;modifier\&quot;&gt;(anonymous)&lt;/$view&gt;'&lt;/$link&gt; on\n&lt;$list filter=\&quot;[list&lt;currentTiddler&gt;sort[title]]\&quot;&gt;\n&lt;$link to=&lt;&lt;currentTiddler&gt;&gt;&gt;&lt;$text text=&lt;&lt;currentTiddler&gt;&gt;/&gt;&lt;/$link&gt;\n&lt;/$list&gt;\n&lt;/div&gt;\n&lt;/$list&gt;\n&lt;/div&gt;\n&lt;/$list&gt;\n&lt;/div&gt;\n&quot;
+        },
+        &quot;$:/plugins/tiddlywiki/comments/styles&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/tiddlywiki/comments/styles&quot;,
+            &quot;tags&quot;: &quot;[[$:/tags/Stylesheet]]&quot;,
+            &quot;text&quot;: &quot;\\rules only filteredtranscludeinline transcludeinline macrodef macrocallinline\n\n.tc-is-comment-header {\n\tpadding: 0.25em;\n\tborder: 2px solid #c1e1ea;\n\tborder-radius: 4px;\n\tbackground: #f1fcff;\n}\n\n.tc-comments-segment {\n\tborder-top: 2px solid #d7eef4;\n}\n\n.tc-comment-button button {\n\twidth: 100%;\n\ttext-align: right;\n}\n\n.tc-sidebar-scrollable .tc-comment-button button {\n\twidth: auto;\n\ttext-align: right;\n}\n\n.tc-comment-button button svg {\n\tfill: #26cb56;\n\theight: 2em;\n\twidth: 2em;\n}\n\n.tc-comments {\n}\n\n.tc-comment-list {\n\tlist-style: none;\n     padding-left: 0;\n}\n\n.tc-comment-list .tc-comments {\n\tpadding-left: 1em;\n}\n\n.tc-comment-entry {\n\tposition: relative;\n\tborder: 2px solid #c1e1ea;\n\tborder-radius: 4px;\n\tmargin: 0.5em 0 0 0;\n\tbackground: #f1fcff;\n}\n\n.tc-comment-entry-heading {\n\tfont-size: 0.7em;\n\tfont-weight: bold;\n\ttext-transform: uppercase;\n\tbackground: #d7eef4;\n\tcolor: #5B6D80;\n\tpadding: 0 0.5em;\n}\n\n.tc-comment-entry-body {\n\tfont-size: 0.8em;\n\tpadding: 0 0.5em;\n}\n\n.tc-comment-entry-body textarea {\n\tfont-size: 1.1em;\n\twidth: 100%\n}\n&quot;
+        },
+        &quot;$:/tags/CommentToolbarButton&quot;: {
+            &quot;title&quot;: &quot;$:/tags/CommentToolbarButton&quot;,
+            &quot;list&quot;: &quot;[[$:/plugins/tiddlywiki/comments/toolbar-button-cancel]] [[$:/plugins/tiddlywiki/comments/toolbar-button-delete]] [[$:/plugins/tiddlywiki/comments/toolbar-button-save]] [[$:/plugins/tiddlywiki/comments/toolbar-button-edit]]&quot;
+        },
+        &quot;$:/plugins/tiddlywiki/comments/toolbar-button-cancel&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/tiddlywiki/comments/toolbar-button-cancel&quot;,
+            &quot;tags&quot;: &quot;$:/tags/CommentToolbarButton&quot;,
+            &quot;text&quot;: &quot;&lt;$reveal state=\&quot;$:/status/IsReadOnly\&quot; type=\&quot;match\&quot; text=\&quot;no\&quot; default=\&quot;no\&quot; tag=\&quot;span\&quot;&gt;\n&lt;$reveal type=\&quot;match\&quot; state=\&quot;!!edit-mode\&quot; text=\&quot;yes\&quot;&gt;\n&lt;$button&gt;\n&lt;$action-setfield $tiddler=&lt;&lt;currentTiddler&gt;&gt; $field=\&quot;edit-mode\&quot; $value=\&quot;no\&quot;/&gt;\n&lt;$action-setfield $tiddler=&lt;&lt;currentTiddler&gt;&gt; $field=\&quot;text\&quot; $value={{!!saved-text}}/&gt;\ncancel\n&lt;/$button&gt;\n&lt;/$reveal&gt;\n&lt;/$reveal&gt;\n&quot;
+        },
+        &quot;$:/plugins/tiddlywiki/comments/toolbar-button-delete&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/tiddlywiki/comments/toolbar-button-delete&quot;,
+            &quot;tags&quot;: &quot;$:/tags/CommentToolbarButton&quot;,
+            &quot;text&quot;: &quot;&lt;$reveal state=\&quot;$:/status/IsReadOnly\&quot; type=\&quot;match\&quot; text=\&quot;no\&quot; default=\&quot;no\&quot; tag=\&quot;span\&quot;&gt;\n&lt;$reveal type=\&quot;match\&quot; state=\&quot;!!edit-mode\&quot; text=\&quot;yes\&quot;&gt;\n&lt;$button&gt;\n&lt;$action-deletetiddler $tiddler=&lt;&lt;currentTiddler&gt;&gt;/&gt;\ndelete\n&lt;/$button&gt;\n&lt;/$reveal&gt;\n&lt;/$reveal&gt;\n&quot;
+        },
+        &quot;$:/plugins/tiddlywiki/comments/toolbar-button-edit&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/tiddlywiki/comments/toolbar-button-edit&quot;,
+            &quot;tags&quot;: &quot;$:/tags/CommentToolbarButton&quot;,
+            &quot;text&quot;: &quot;&lt;$reveal state=\&quot;$:/status/IsReadOnly\&quot; type=\&quot;match\&quot; text=\&quot;no\&quot; default=\&quot;no\&quot; tag=\&quot;span\&quot;&gt;\n&lt;$reveal type=\&quot;nomatch\&quot; state=\&quot;!!edit-mode\&quot; text=\&quot;yes\&quot;&gt;\n&lt;$button&gt;\n&lt;$action-setfield $tiddler=&lt;&lt;currentTiddler&gt;&gt; $field=\&quot;edit-mode\&quot; $value=\&quot;yes\&quot;/&gt;\n&lt;$action-setfield $tiddler=&lt;&lt;currentTiddler&gt;&gt; $field=\&quot;saved-text\&quot; $value={{!!text}}/&gt;\nedit\n&lt;/$button&gt;\n&lt;/$reveal&gt;\n&lt;/$reveal&gt;\n&quot;
+        },
+        &quot;$:/plugins/tiddlywiki/comments/toolbar-button-save&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/tiddlywiki/comments/toolbar-button-save&quot;,
+            &quot;tags&quot;: &quot;$:/tags/CommentToolbarButton&quot;,
+            &quot;text&quot;: &quot;&lt;$reveal state=\&quot;$:/status/IsReadOnly\&quot; type=\&quot;match\&quot; text=\&quot;no\&quot; default=\&quot;no\&quot; tag=\&quot;span\&quot;&gt;\n&lt;$reveal type=\&quot;match\&quot; state=\&quot;!!edit-mode\&quot; text=\&quot;yes\&quot;&gt;\n&lt;$button&gt;\n&lt;$action-setfield $tiddler=&lt;&lt;currentTiddler&gt;&gt; $field=\&quot;edit-mode\&quot; $value=\&quot;no\&quot;/&gt;\nsave\n&lt;/$button&gt;\n&lt;/$reveal&gt;\n&lt;/$reveal&gt;\n&quot;
+        }
+    }
+}</pre>
+</div>
+<div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="" description="Dynamic scrolling and zooming effects" list="readme docs examples config" plugin-type="plugin" title="$:/plugins/tiddlywiki/dynaview" type="application/json" version="5.1.19">
+<pre>{
+    &quot;tiddlers&quot;: {
+        &quot;$:/plugins/tiddlywiki/dynaview/above-story&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/tiddlywiki/dynaview/above-story&quot;,
+            &quot;tags&quot;: &quot;$:/tags/AboveStory-disabled&quot;,
+            &quot;text&quot;: &quot;&lt;!-- Remove the \&quot;-disabled\&quot; part of the tag to cause the currently selected example to appear at the top of the story river. Intended to make it easier to make clean screencaps --&gt;\n&lt;div style=\&quot;height:100em;\&quot;&gt;\n&lt;$transclude tiddler={{$:/state/tab--1915807570}} mode=\&quot;block\&quot;/&gt;\n&lt;/div&gt;\n&quot;
+        },
+        &quot;$:/config/DynaView/ViewportDimensions&quot;: {
+            &quot;title&quot;: &quot;$:/config/DynaView/ViewportDimensions&quot;,
+            &quot;text&quot;: &quot;no&quot;
+        },
+        &quot;$:/config/DynaView/UpdateAddressBar&quot;: {
+            &quot;title&quot;: &quot;$:/config/DynaView/UpdateAddressBar&quot;,
+            &quot;text&quot;: &quot;no&quot;
+        },
+        &quot;$:/plugins/tiddlywiki/dynaview/config&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/tiddlywiki/dynaview/config&quot;,
+            &quot;text&quot;: &quot;&lt;$checkbox tiddler=\&quot;$:/config/DynaView/ViewportDimensions\&quot; field=\&quot;text\&quot; checked=\&quot;yes\&quot; unchecked=\&quot;no\&quot; default=\&quot;no\&quot;&gt; Enable dynamic saving of the viewport [[width|$:/state/DynaView/ViewportDimensions/Width]] and [[height|$:/state/DynaView/ViewportDimensions/Height]]&lt;/$checkbox&gt;\n\n&lt;$checkbox tiddler=\&quot;$:/config/DynaView/UpdateAddressBar\&quot; field=\&quot;text\&quot; checked=\&quot;yes\&quot; unchecked=\&quot;no\&quot; default=\&quot;no\&quot;&gt; Update address bar while scrolling&lt;/$checkbox&gt;\n\n&quot;
+        },
+        &quot;$:/plugins/tiddlywiki/dynaview/docs&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/tiddlywiki/dynaview/docs&quot;,
+            &quot;text&quot;: &quot;! Documentation\n\nThe components of this plugin include:\n\n* A background task that:\n** performs specified actions when elements are scrolled into view\n** updates certain base classes on the `document.body` according to the current zoom level\n** if enabled in the DynaView config panel - dynamically stores the viewport dimensions in $:/state/viewport/width and $:/state/viewport/height\n* Pre-configured CSS classes to simplify using those base classes\n* Usage examples\n\n! Scroll Features\n\n!! Set tiddler field when visible\n\nThe background task detects when elements with the class `tc-dynaview-set-tiddler-when-visible` scroll into view. The first time that they do, the background task assigns the value in the attribute `data-dynaview-set-value` to the tiddler whose title is in the attribute `data-dynaview-set-tiddler`. This assignment can be tied to a reveal widget to cause content to be displayed when it becomes visible. If the class `tc-dynaview-expand-viewport` is set then the viewport is expanded so that the processing occurs when elements move near the viewport.\n\n!! Unset tiddler field when set visible before but then scrolled out of view\n\nThe background task detects when elements with the class `tc-dynaview-set-tiddler-when-visible` scroll out view after they have scrolled into view. When scrolling out of view after they have scrolled in, the background task assigns the value in the attribute `data-dynaview-unset-value` to the tiddler whose title is in the attribute `data-dynaview-unset-tiddler`. This assignment can be tied to a reveal widget to cause content to be hidden when it becomes invisible. If the class `tc-dynaview-expand-viewport` is set then the viewport is expanded so that the processing occurs when elements move near the viewport.\n\n!! Update address bar when scrolling\n\nThe background task detects the tiddler at the top of the viewport and sets the address bar location hash to the title of that tiddler.\n\n! Viewport Size Features\n\n!! Resize Tracking\n\nSome widgets require re-rendering or refreshing if the size of the viewport changes. This can be accomplished using \&quot;resize counting\&quot; in two steps:\n\n* Ensure that a DOM element with the class `tc-dynaview-request-refresh-on-resize` is present in the DOM to enable resize counting\n* Have the widget check for changes to the tiddler $:/state/DynaView/ViewportDimensions/ResizeCount to detect viewport resizes\n\n!! Viewport Size Tracking\n\nThe background task can optionally dynamically update a pair of state tiddlers with the dimensions of the browser viewport.\n\n* Set the configuration tiddler $:/config/DynaView/ViewportDimensions to the text \&quot;yes\&quot; to enable this feature\n* The viewport dimensions can be found in $:/state/DynaView/ViewportDimensions/Width and $:/state/DynaView/ViewportDimensions/Height\n\n! Zoom Features\n\n!! Document Body Zoom Classes\n\nThe background task sets the following classes on `document.body` according to the current zoom level.\n\n|!Class |!Description |\n|`tc-dynaview-zoom-factor-1` |Set when the zoom level is less than 2.00 |\n|`tc-dynaview-zoom-factor-2` |Set when the zoom level is greater than 2.00 and less than 3.00 |\n|`tc-dynaview-zoom-factor-3` |Set when the zoom level is greater than 3.00 and less than 4.00 |\n|`tc-dynaview-zoom-factor-4` |Set when the zoom level is greater than 4.00 |\n|`tc-dynaview-zoom-factor-1-and-above` |Set when the zoom level is greater than or equal to 1.00 |\n|`tc-dynaview-zoom-factor-1a-and-above` |Set when the zoom level is greater than or equal to 1.14 |\n|`tc-dynaview-zoom-factor-1b-and-above` |Set when the zoom level is greater than or equal to 1.33 |\n|`tc-dynaview-zoom-factor-1c-and-above` |Set when the zoom level is greater than or equal to 1.60 |\n|`tc-dynaview-zoom-factor-2-and-above` |Set when the zoom level is greater than or equal to 2.00 |\n|`tc-dynaview-zoom-factor-2a-and-above` |Set when the zoom level is greater than or equal to 2.66 |\n|`tc-dynaview-zoom-factor-3-and-above` |Set when the zoom level is greater than or equal to 3.00 |\n|`tc-dynaview-zoom-factor-4-and-above` |Set when the zoom level is greater than or equal to 4.00 |\n\n!! Pre-configured Classes\n\nThese classes can be used on any element to control its visibility at different zoom levels.\n\n|!Class |!Description |\n|`tc-dynaview-zoom-visible-1-and-above` |Visible when the zoom level is 1.00 or more |\n|`tc-dynaview-zoom-visible-1a-and-above` |Visible when the zoom level is 1.14 or more |\n|`tc-dynaview-zoom-visible-1b-and-above` |Visible when the zoom level is 1.33 or more |\n|`tc-dynaview-zoom-visible-1c-and-above` |Visible when the zoom level is 1.60 or more |\n|`tc-dynaview-zoom-visible-2-and-above` |Visible when the zoom level is 2.00 or more |\n|`tc-dynaview-zoom-visible-2a-and-above` |Visible when the zoom level is 2.66 or more |\n|`tc-dynaview-zoom-visible-3-and-above` |Visible when the zoom level is 3.00 or more |\n|`tc-dynaview-zoom-visible-4-and-above` |Visible when the zoom level is 4.00 or more |\n|`tc-dynaview-zoom-visible-1` |Visible when the zoom level is less than 2.00 |\n|`tc-dynaview-zoom-visible-2` |Visible when the zoom level is greater than or equal to 2.00 and less than 3.00 |\n|`tc-dynaview-zoom-visible-3` |Visible when the zoom level is greater than or equal to 3.00 and less than 4.00 |\n|`tc-dynaview-zoom-visible-4` |Visible when the zoom level is greater than or equal to 4.00 |\n&quot;
+        },
+        &quot;$:/plugins/tiddlywiki/dynaview/dynaview.js&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/tiddlywiki/dynaview/dynaview.js&quot;,
+            &quot;text&quot;: &quot;/*\\\ntitle: $:/plugins/tiddlywiki/dynaview/dynaview.js\ntype: application/javascript\nmodule-type: startup\n\nZoom everything\n\n\\*/\n(function(){\n\n/*jslint node: true, browser: true */\n/*global $tw: false */\n\&quot;use strict\&quot;;\n\n// Export name and synchronous status\nexports.name = \&quot;dynaview\&quot;;\nexports.platforms = [\&quot;browser\&quot;];\nexports.after = [\&quot;render\&quot;];\nexports.synchronous = true;\n\nvar isWaitingForAnimationFrame = 0, // Bitmask:\n\tANIM_FRAME_CAUSED_BY_LOAD = 1, // Animation frame was requested because of page load\n\tANIM_FRAME_CAUSED_BY_SCROLL = 2, // Animation frame was requested because of page scroll\n\tANIM_FRAME_CAUSED_BY_RESIZE = 4; // Animation frame was requested because of window resize\n\nexports.startup = function() {\n\twindow.addEventListener(\&quot;load\&quot;,onLoad,false);\n\twindow.addEventListener(\&quot;scroll\&quot;,onScroll,false);\n\twindow.addEventListener(\&quot;resize\&quot;,onResize,false);\n\t$tw.hooks.addHook(\&quot;th-page-refreshed\&quot;,function() {\n\t\tcheckTopmost();\n\t\tcheckVisibility();\n\t\tsaveViewportDimensions();\n\t});\n};\n\nfunction onLoad(event) {\n\tif(!isWaitingForAnimationFrame) {\n\t\twindow.requestAnimationFrame(worker);\n\t}\n\tisWaitingForAnimationFrame |= ANIM_FRAME_CAUSED_BY_LOAD;\n}\n\nfunction onScroll(event) {\n\tif(!isWaitingForAnimationFrame) {\n\t\twindow.requestAnimationFrame(worker);\n\t}\n\tisWaitingForAnimationFrame |= ANIM_FRAME_CAUSED_BY_SCROLL;\n}\n\nfunction onResize(event) {\n\tif(!isWaitingForAnimationFrame) {\n\t\twindow.requestAnimationFrame(worker);\n\t}\n\tisWaitingForAnimationFrame |= ANIM_FRAME_CAUSED_BY_RESIZE;\n}\n\nfunction worker() {\n\tif(isWaitingForAnimationFrame &amp; (ANIM_FRAME_CAUSED_BY_RESIZE | ANIM_FRAME_CAUSED_BY_LOAD)) {\n\t\tsaveViewportDimensions();\n\t}\n\tsetZoomClasses();\n\tcheckTopmost();\n\tcheckVisibility();\n\tisWaitingForAnimationFrame = 0;\n}\n\nfunction setZoomClasses() {\n\tvar zoomFactor = document.body.scrollWidth / window.innerWidth,\n\t\tclassList = document.body.classList;\n\tclassList.add(\&quot;tc-dynaview\&quot;);\n\tclassList.toggle(\&quot;tc-dynaview-zoom-factor-1\&quot;,zoomFactor &lt;= 2);\n\tclassList.toggle(\&quot;tc-dynaview-zoom-factor-1-and-above\&quot;,zoomFactor &gt;= 1);\n\tclassList.toggle(\&quot;tc-dynaview-zoom-factor-1a-and-above\&quot;,zoomFactor &gt;= 1.14);\n\tclassList.toggle(\&quot;tc-dynaview-zoom-factor-1b-and-above\&quot;,zoomFactor &gt;= 1.33);\n\tclassList.toggle(\&quot;tc-dynaview-zoom-factor-1c-and-above\&quot;,zoomFactor &gt;= 1.6);\n\tclassList.toggle(\&quot;tc-dynaview-zoom-factor-2\&quot;,zoomFactor &gt;= 2 &amp;&amp; zoomFactor &lt;= 3);\n\tclassList.toggle(\&quot;tc-dynaview-zoom-factor-2-and-above\&quot;,zoomFactor &gt;= 2);\n\tclassList.toggle(\&quot;tc-dynaview-zoom-factor-2a-and-above\&quot;,zoomFactor &gt;= 2.66);\n\tclassList.toggle(\&quot;tc-dynaview-zoom-factor-3\&quot;,zoomFactor &gt;= 3 &amp;&amp; zoomFactor &lt;= 4);\n\tclassList.toggle(\&quot;tc-dynaview-zoom-factor-3-and-above\&quot;,zoomFactor &gt;= 3);\n\tclassList.toggle(\&quot;tc-dynaview-zoom-factor-4\&quot;,zoomFactor &gt;= 4);\n\tclassList.toggle(\&quot;tc-dynaview-zoom-factor-4-and-above\&quot;,zoomFactor &gt;= 4);\n}\n\nfunction checkVisibility() {\n\tvar elements = document.querySelectorAll(\&quot;.tc-dynaview-set-tiddler-when-visible\&quot;);\n\t$tw.utils.each(elements,function(element) {\n\t\t// Bail if we've already triggered this element and we're not unsetting a tiddler when this element leaves the viewport\n\t\tif(element.getAttribute(\&quot;data-dynaview-has-triggered\&quot;) === \&quot;true\&quot; &amp;&amp; !element.hasAttribute(\&quot;data-dynaview-unset-tiddler\&quot;)) {\n\t\t\treturn;\n\t\t}\n\t\t// Calculate whether the element is visible\n\t\tvar elementRect = element.getBoundingClientRect(),\n\t\t\tviewportWidth = window.innerWidth || document.documentElement.clientWidth,\n\t\t\tviewportHeight = window.innerHeight || document.documentElement.clientHeight,\n\t\t\tviewportRect = {\n\t\t\t\tleft: 0,\n\t\t\t\tright: viewportWidth,\n\t\t\t\ttop: 0,\n\t\t\t\tbottom: viewportHeight\n\t\t\t},\n\t\t\ttiddler,\n\t\t\tvalue;\n\t\tif(element.classList.contains(\&quot;tc-dynaview-expand-viewport\&quot;)) {\n\t\t\tviewportRect.left -= viewportWidth;\n\t\t\tviewportRect.right += viewportWidth;\n\t\t\tviewportRect.top -= viewportHeight;\n\t\t\tviewportRect.bottom += viewportHeight;\n\t\t}\n\t\tif(elementRect.left &gt; viewportRect.right || \n\t\t\telementRect.right &lt; viewportRect.left || \n\t\t\telementRect.top &gt; viewportRect.bottom ||\n\t\t\telementRect.bottom &lt; viewportRect.top) {\n\t\t\t// Element is not visible\n\t\t\t// Set the unset tiddler if required and this element has previously been triggered\n\t\t\tif(element.getAttribute(\&quot;data-dynaview-has-triggered\&quot;) === \&quot;true\&quot; &amp;&amp; element.hasAttribute(\&quot;data-dynaview-unset-tiddler\&quot;)) {\n\t\t\t\ttiddler = element.getAttribute(\&quot;data-dynaview-unset-tiddler\&quot;);\n\t\t\t\tvalue = element.getAttribute(\&quot;data-dynaview-unset-value\&quot;) || \&quot;\&quot;;\n\t\t\t\tif(tiddler &amp;&amp; $tw.wiki.getTiddlerText(tiddler) !== value) {\n\t\t\t\t\t$tw.wiki.addTiddler(new $tw.Tiddler({title: tiddler, text: value}));\n\t\t\t\t}\n\t\t\t\telement.setAttribute(\&quot;data-dynaview-has-triggered\&quot;,\&quot;false\&quot;);\t\t\t\t\n\t\t\t}\n\t\t} else {\n\t\t\t// Element is visible\n\t\t\ttiddler = element.getAttribute(\&quot;data-dynaview-set-tiddler\&quot;);\n\t\t\tvalue = element.getAttribute(\&quot;data-dynaview-set-value\&quot;) || \&quot;\&quot;;\n\t\t\tif(tiddler &amp;&amp; $tw.wiki.getTiddlerText(tiddler) !== value) {\n\t\t\t\t$tw.wiki.addTiddler(new $tw.Tiddler({title: tiddler, text: value}));\n\t\t\t}\n\t\t\telement.setAttribute(\&quot;data-dynaview-has-triggered\&quot;,\&quot;true\&quot;);\n\t\t}\n\t});\n}\n\nfunction checkTopmost() {\n\tif($tw.wiki.getTiddlerText(\&quot;$:/config/DynaView/UpdateAddressBar\&quot;) === \&quot;yes\&quot;) {\n\t\tvar elements = document.querySelectorAll(\&quot;.tc-tiddler-frame[data-tiddler-title]\&quot;),\n\t\t\ttopmostElement = null,\n\t\t\ttopmostElementTop = 1 * 1000 * 1000;\n\t\t$tw.utils.each(elements,function(element) {\n\t\t\t// Check if the element is visible\n\t\t\tvar elementRect = element.getBoundingClientRect();\n\t\t\tif((elementRect.top &lt; topmostElementTop) &amp;&amp; (elementRect.bottom &gt; 0)) {\n\t\t\t\ttopmostElement = element;\n\t\t\t\ttopmostElementTop = elementRect.top;\n\t\t\t}\n\t\t});\n\t\tif(topmostElement) {\n\t\t\tvar title = topmostElement.getAttribute(\&quot;data-tiddler-title\&quot;),\n\t\t\t\thash = \&quot;#\&quot; + encodeURIComponent(title) + \&quot;:\&quot; + encodeURIComponent(\&quot;[list[$:/StoryList]]\&quot;);\n\t\t\tif(title &amp;&amp; $tw.locationHash !== hash) {\n\t\t\t\t$tw.locationHash = hash;\n\t\t\t\twindow.location.hash = hash;\t\t\t\n\t\t\t}\n\t\t}\n\t}\n}\n\nvar previousViewportWidth, previousViewportHeight;\n\nfunction saveViewportDimensions() {\n\tvar viewportWidth = window.innerWidth || document.documentElement.clientWidth,\n\t\tviewportHeight = window.innerHeight || document.documentElement.clientHeight;\n\tif(document.querySelector(\&quot;.tc-dynaview-request-refresh-on-resize\&quot;)) {\n\t\tif(previousViewportWidth !== viewportWidth || previousViewportHeight !== viewportHeight) {\n\t\t\tvar count = parseInt($tw.wiki.getTiddlerText(\&quot;$:/state/DynaView/ViewportDimensions/ResizeCount\&quot;,\&quot;0\&quot;),10) || 0;\n\t\t\t$tw.wiki.addTiddler(new $tw.Tiddler({title: \&quot;$:/state/DynaView/ViewportDimensions/ResizeCount\&quot;, text: (count + 1) + \&quot;\&quot;}));\n\t\t\tpreviousViewportWidth = viewportWidth;\n\t\t\tpreviousViewportHeight = viewportHeight;\n\t\t}\n\t}\n\tif($tw.wiki.getTiddlerText(\&quot;$:/config/DynaView/ViewportDimensions\&quot;) === \&quot;yes\&quot;) {\n\t\tif($tw.wiki.getTiddlerText(\&quot;$:/state/DynaView/ViewportDimensions/Width\&quot;) !== viewportWidth.toString()) {\n\t\t\t$tw.wiki.setText(\&quot;$:/state/DynaView/ViewportDimensions/Width\&quot;,undefined,undefined,viewportWidth.toString(),undefined);\n\t\t}\n\t\tif($tw.wiki.getTiddlerText(\&quot;$:/state/DynaView/ViewportDimensions/Height\&quot;) !== viewportHeight.toString()) {\n\t\t\t$tw.wiki.setText(\&quot;$:/state/DynaView/ViewportDimensions/Height\&quot;,undefined,undefined,viewportHeight.toString(),undefined);\n\t\t}\n\t}\n}\n\n})();\n&quot;,
+            &quot;type&quot;: &quot;application/javascript&quot;,
+            &quot;module-type&quot;: &quot;startup&quot;
+        },
+        &quot;$:/plugins/tiddlywiki/dynaview/examples/progressive-text&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/tiddlywiki/dynaview/examples/progressive-text&quot;,
+            &quot;tags&quot;: &quot;$:/tags/dynaviewExamples&quot;,
+            &quot;caption&quot;: &quot;Progressive Text&quot;,
+            &quot;text&quot;: &quot;//Zoom into the space below to see a poem//\n\n''N.B. This example only works in Safari at the moment''\n\n&lt;pre&gt;&lt;div class=\&quot;tc-dynaview-zoom-visible-1-and-above\&quot; style=\&quot;font-size: 0.7em;line-height:1.5;\&quot;&gt;\n         'Fury said to a\n         mouse, That he\n        met in the\n       house,&lt;/div&gt;&lt;div class=\&quot;tc-dynaview-zoom-visible-1a-and-above\&quot; style=\&quot;font-size: 0.6em;line-height:1.5;\&quot;&gt;     \&quot;Let us\n      both go to\n       law: I will\n        prosecute\n         YOU.--Come,&lt;/div&gt;&lt;div class=\&quot;tc-dynaview-zoom-visible-1b-and-above\&quot; style=\&quot;font-size: 0.5em;line-height:1.5;\&quot;&gt;           I'll take no\n           denial; We\n          must have a\n        trial: For&lt;/div&gt;&lt;div class=\&quot;tc-dynaview-zoom-visible-1c-and-above\&quot; style=\&quot;font-size: 0.4em;line-height:1.5;\&quot;&gt;      really this\n     morning I've\n    nothing\n    to do.\&quot;&lt;/div&gt;&lt;div class=\&quot;tc-dynaview-zoom-visible-2-and-above\&quot; style=\&quot;font-size: 0.3em;line-height:1.5;\&quot;&gt;     Said the\n      mouse to the\n       cur, \&quot;Such\n        a trial,\n         dear Sir,&lt;/div&gt;&lt;div class=\&quot;tc-dynaview-zoom-visible-2a-and-above\&quot; style=\&quot;font-size: 0.25em;line-height:1.5;\&quot;&gt;            With\n          no jury\n        or judge,\n       would be\n      wasting\n      our\n      breath.\&quot;&lt;/div&gt;&lt;div class=\&quot;tc-dynaview-zoom-visible-3-and-above\&quot; style=\&quot;font-size: 0.2em;line-height:1.5;\&quot;&gt;       \&quot;I'll be\n        judge, I'll\n         be jury,\&quot;\n            Said\n         cunning\n          old Fury:\n          \&quot;I'll\n          try the\n            whole\n            cause,&lt;/div&gt;&lt;div class=\&quot;tc-dynaview-zoom-visible-4-and-above\&quot; style=\&quot;font-size: 0.15em;line-height:1.5;\&quot;&gt;              and\n           condemn\n           you\n          to\n           death.\&quot;'\n&lt;/div&gt;&lt;/pre&gt;\n&quot;
+        },
+        &quot;$:/plugins/tiddlywiki/dynaview/examples/reveal-on-scroll&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/tiddlywiki/dynaview/examples/reveal-on-scroll&quot;,
+            &quot;tags&quot;: &quot;$:/tags/dynaviewExamples&quot;,
+            &quot;caption&quot;: &quot;Reveal on Scroll&quot;,
+            &quot;text&quot;: &quot;\\define indicator(index)\n&lt;$reveal state=\&quot;$:/state/unreveal-on-scroll/example$index$\&quot; type=\&quot;match\&quot; text=\&quot;yes\&quot;&gt;\n$index$\n&lt;/$reveal&gt;\n\\end\n\n\\define lorem-ipsum(index)\n&lt;div class=\&quot;tc-dynaview-set-tiddler-when-visible\&quot; style=\&quot;min-height: 75px;\&quot; data-dynaview-set-tiddler=\&quot;$:/state/unreveal-on-scroll/example$index$\&quot; data-dynaview-set-value=\&quot;yes\&quot;&gt;\n&lt;h1&gt;Heading $index$&lt;/h1&gt;\n&lt;$reveal state=\&quot;$:/state/unreveal-on-scroll/example$index$\&quot; type=\&quot;match\&quot; text=\&quot;yes\&quot;&gt;\n(Rendered at &lt;&lt;now \&quot;[UTC]YYYY-0MM-0DD 0hh:0mm:0ss.XXX\&quot;&gt;&gt;) Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n&lt;/$reveal&gt;\n&lt;/div&gt;\n\\end\n\nThis example renders tiddlers as they are scrolled into view.\n\nVisible: &lt;$list filter=\&quot;1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16\&quot;&gt;\n&lt;$macrocall $name=\&quot;indicator\&quot; index=&lt;&lt;currentTiddler&gt;&gt;/&gt;\n&lt;/$list&gt;\n\n&lt;$list filter=\&quot;1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16\&quot;&gt;\n&lt;$macrocall $name=\&quot;lorem-ipsum\&quot; index=&lt;&lt;currentTiddler&gt;&gt;/&gt;\n&lt;/$list&gt;&quot;
+        },
+        &quot;$:/plugins/tiddlywiki/dynaview/examples/unreveal-on-scroll&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/tiddlywiki/dynaview/examples/unreveal-on-scroll&quot;,
+            &quot;tags&quot;: &quot;$:/tags/dynaviewExamples&quot;,
+            &quot;caption&quot;: &quot;Unreveal on Scroll&quot;,
+            &quot;text&quot;: &quot;\\define indicator(index)\n&lt;$reveal state=\&quot;$:/state/reveal-on-scroll/example$index$\&quot; type=\&quot;match\&quot; text=\&quot;yes\&quot;&gt;\n$index$\n&lt;/$reveal&gt;\n\\end\n\n\\define lorem-ipsum(index)\n&lt;div class=\&quot;tc-dynaview-set-tiddler-when-visible\&quot; style=\&quot;min-height: 75px;\&quot; data-dynaview-set-tiddler=\&quot;$:/state/reveal-on-scroll/example$index$\&quot; data-dynaview-set-value=\&quot;yes\&quot; data-dynaview-unset-tiddler=\&quot;$:/state/reveal-on-scroll/example$index$\&quot; data-dynaview-unset-value=\&quot;no\&quot;&gt;\n&lt;h1&gt;Heading $index$&lt;/h1&gt;\n&lt;$reveal state=\&quot;$:/state/reveal-on-scroll/example$index$\&quot; type=\&quot;match\&quot; text=\&quot;yes\&quot;&gt;\n(Rendered at &lt;&lt;now \&quot;[UTC]YYYY-0MM-0DD 0hh:0mm:0ss.XXX\&quot;&gt;&gt;) Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n&lt;/$reveal&gt;\n&lt;/div&gt;\n\\end\n\nThis example renders tiddlers as they are scrolled into view, and hides them when they scroll out of view again.\n\nVisible: &lt;$list filter=\&quot;1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16\&quot;&gt;\n&lt;$macrocall $name=\&quot;indicator\&quot; index=&lt;&lt;currentTiddler&gt;&gt;/&gt;\n&lt;/$list&gt;\n\n&lt;$list filter=\&quot;1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16\&quot;&gt;\n&lt;$macrocall $name=\&quot;lorem-ipsum\&quot; index=&lt;&lt;currentTiddler&gt;&gt;/&gt;\n&lt;/$list&gt;\n&quot;
+        },
+        &quot;$:/plugins/tiddlywiki/dynaview/zoomable-diagram/TiddlyWiki Architecture&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/tiddlywiki/dynaview/zoomable-diagram/TiddlyWiki Architecture&quot;,
+            &quot;caption&quot;: &quot;TiddlyWiki Architecture&quot;,
+            &quot;tags&quot;: &quot;[[$:/tags:/ZoomableDiagram]]&quot;,
+            &quot;text&quot;: &quot;&lt;&lt;lorem-ipsum&gt;&gt;&quot;
+        },
+        &quot;$:/plugins/tiddlywiki/dynaview/zoomable-diagram/Browser Architecture&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/tiddlywiki/dynaview/zoomable-diagram/Browser Architecture&quot;,
+            &quot;caption&quot;: &quot;Browser Architecture&quot;,
+            &quot;tags&quot;: &quot;[[$:/plugins/tiddlywiki/dynaview/zoomable-diagram/TiddlyWiki Architecture]]&quot;,
+            &quot;text&quot;: &quot;&lt;&lt;lorem-ipsum&gt;&gt;&quot;
+        },
+        &quot;$:/plugins/tiddlywiki/dynaview/zoomable-diagram/Service Workers&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/tiddlywiki/dynaview/zoomable-diagram/Service Workers&quot;,
+            &quot;caption&quot;: &quot;Service Workers&quot;,
+            &quot;tags&quot;: &quot;[[$:/plugins/tiddlywiki/dynaview/zoomable-diagram/Browser Architecture]]&quot;,
+            &quot;text&quot;: &quot;&lt;&lt;lorem-ipsum&gt;&gt;&quot;
+        },
+        &quot;$:/plugins/tiddlywiki/dynaview/zoomable-diagram/Service Bosses&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/tiddlywiki/dynaview/zoomable-diagram/Service Bosses&quot;,
+            &quot;caption&quot;: &quot;Service Bosses&quot;,
+            &quot;tags&quot;: &quot;[[$:/plugins/tiddlywiki/dynaview/zoomable-diagram/Service Workers]]&quot;,
+            &quot;text&quot;: &quot;&lt;&lt;lorem-ipsum&gt;&gt;&quot;
+        },
+        &quot;$:/plugins/tiddlywiki/dynaview/zoomable-diagram/Out of Service Workers&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/tiddlywiki/dynaview/zoomable-diagram/Out of Service Workers&quot;,
+            &quot;caption&quot;: &quot;Out of Service Workers&quot;,
+            &quot;tags&quot;: &quot;[[$:/plugins/tiddlywiki/dynaview/zoomable-diagram/Service Workers]]&quot;,
+            &quot;text&quot;: &quot;&lt;&lt;lorem-ipsum&gt;&gt;&quot;
+        },
+        &quot;$:/plugins/tiddlywiki/dynaview/zoomable-diagram/Events&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/tiddlywiki/dynaview/zoomable-diagram/Events&quot;,
+            &quot;caption&quot;: &quot;Events&quot;,
+            &quot;tags&quot;: &quot;[[$:/plugins/tiddlywiki/dynaview/zoomable-diagram/Browser Architecture]]&quot;,
+            &quot;text&quot;: &quot;&lt;&lt;lorem-ipsum&gt;&gt;&quot;
+        },
+        &quot;$:/plugins/tiddlywiki/dynaview/zoomable-diagram/Non Events&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/tiddlywiki/dynaview/zoomable-diagram/Non Events&quot;,
+            &quot;caption&quot;: &quot;Non Events&quot;,
+            &quot;tags&quot;: &quot;[[$:/plugins/tiddlywiki/dynaview/zoomable-diagram/Events]]&quot;,
+            &quot;text&quot;: &quot;&lt;&lt;lorem-ipsum&gt;&gt;&quot;
+        },
+        &quot;$:/plugins/tiddlywiki/dynaview/zoomable-diagram/Past Events&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/tiddlywiki/dynaview/zoomable-diagram/Past Events&quot;,
+            &quot;caption&quot;: &quot;Past Events&quot;,
+            &quot;tags&quot;: &quot;[[$:/plugins/tiddlywiki/dynaview/zoomable-diagram/Events]]&quot;,
+            &quot;text&quot;: &quot;&lt;&lt;lorem-ipsum&gt;&gt;&quot;
+        },
+        &quot;$:/plugins/tiddlywiki/dynaview/zoomable-diagram/DOM&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/tiddlywiki/dynaview/zoomable-diagram/DOM&quot;,
+            &quot;caption&quot;: &quot;DOM&quot;,
+            &quot;tags&quot;: &quot;[[$:/plugins/tiddlywiki/dynaview/zoomable-diagram/Browser Architecture]]&quot;,
+            &quot;text&quot;: &quot;&lt;&lt;lorem-ipsum&gt;&gt;&quot;
+        },
+        &quot;$:/plugins/tiddlywiki/dynaview/zoomable-diagram/Nodes&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/tiddlywiki/dynaview/zoomable-diagram/Nodes&quot;,
+            &quot;caption&quot;: &quot;Nodes&quot;,
+            &quot;tags&quot;: &quot;[[$:/plugins/tiddlywiki/dynaview/zoomable-diagram/DOM]]&quot;,
+            &quot;text&quot;: &quot;&lt;&lt;lorem-ipsum&gt;&gt;&quot;
+        },
+        &quot;$:/plugins/tiddlywiki/dynaview/zoomable-diagram/Attributes&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/tiddlywiki/dynaview/zoomable-diagram/Attributes&quot;,
+            &quot;caption&quot;: &quot;Attributes&quot;,
+            &quot;tags&quot;: &quot;[[$:/plugins/tiddlywiki/dynaview/zoomable-diagram/DOM]]&quot;,
+            &quot;text&quot;: &quot;&lt;&lt;lorem-ipsum&gt;&gt;&quot;
+        },
+        &quot;$:/plugins/tiddlywiki/dynaview/zoomable-diagram/Pathogens&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/tiddlywiki/dynaview/zoomable-diagram/Pathogens&quot;,
+            &quot;caption&quot;: &quot;Pathogens&quot;,
+            &quot;tags&quot;: &quot;[[$:/plugins/tiddlywiki/dynaview/zoomable-diagram/DOM]]&quot;,
+            &quot;text&quot;: &quot;&lt;&lt;lorem-ipsum&gt;&gt;&quot;
+        },
+        &quot;$:/plugins/tiddlywiki/dynaview/zoomable-diagram/Connection&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/tiddlywiki/dynaview/zoomable-diagram/Connection&quot;,
+            &quot;caption&quot;: &quot;Connection&quot;,
+            &quot;tags&quot;: &quot;[[$:/plugins/tiddlywiki/dynaview/zoomable-diagram/TiddlyWiki Architecture]]&quot;,
+            &quot;text&quot;: &quot;&lt;&lt;lorem-ipsum&gt;&gt;&quot;
+        },
+        &quot;$:/plugins/tiddlywiki/dynaview/zoomable-diagram/HTTP&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/tiddlywiki/dynaview/zoomable-diagram/HTTP&quot;,
+            &quot;caption&quot;: &quot;HTTP&quot;,
+            &quot;tags&quot;: &quot;[[$:/plugins/tiddlywiki/dynaview/zoomable-diagram/Connection]]&quot;,
+            &quot;text&quot;: &quot;&lt;&lt;lorem-ipsum&gt;&gt;&quot;
+        },
+        &quot;$:/plugins/tiddlywiki/dynaview/zoomable-diagram/Server Architecture&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/tiddlywiki/dynaview/zoomable-diagram/Server Architecture&quot;,
+            &quot;caption&quot;: &quot;Server Architecture&quot;,
+            &quot;tags&quot;: &quot;[[$:/plugins/tiddlywiki/dynaview/zoomable-diagram/TiddlyWiki Architecture]]&quot;,
+            &quot;text&quot;: &quot;&lt;&lt;lorem-ipsum&gt;&gt;&quot;
+        },
+        &quot;$:/plugins/tiddlywiki/dynaview/zoomable-diagram/Node.js&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/tiddlywiki/dynaview/zoomable-diagram/Node.js&quot;,
+            &quot;caption&quot;: &quot;Node.js&quot;,
+            &quot;tags&quot;: &quot;[[$:/plugins/tiddlywiki/dynaview/zoomable-diagram/Server Architecture]]&quot;,
+            &quot;text&quot;: &quot;&lt;&lt;lorem-ipsum&gt;&gt;&quot;
+        },
+        &quot;$:/plugins/tiddlywiki/dynaview/zoomable-diagram/C/C++&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/tiddlywiki/dynaview/zoomable-diagram/C/C++&quot;,
+            &quot;caption&quot;: &quot;C/C++&quot;,
+            &quot;tags&quot;: &quot;[[$:/plugins/tiddlywiki/dynaview/zoomable-diagram/Node.js]]&quot;,
+            &quot;text&quot;: &quot;&lt;&lt;lorem-ipsum&gt;&gt;&quot;
+        },
+        &quot;$:/plugins/tiddlywiki/dynaview/zoomable-diagram/Quotation Marks&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/tiddlywiki/dynaview/zoomable-diagram/Quotation Marks&quot;,
+            &quot;caption&quot;: &quot;Quotation Marks&quot;,
+            &quot;tags&quot;: &quot;[[$:/plugins/tiddlywiki/dynaview/zoomable-diagram/Node.js]]&quot;,
+            &quot;text&quot;: &quot;&lt;&lt;lorem-ipsum&gt;&gt;&quot;
+        },
+        &quot;$:/plugins/tiddlywiki/dynaview/zoomable-diagram/Asterisks&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/tiddlywiki/dynaview/zoomable-diagram/Asterisks&quot;,
+            &quot;caption&quot;: &quot;Asterisks&quot;,
+            &quot;tags&quot;: &quot;[[$:/plugins/tiddlywiki/dynaview/zoomable-diagram/Node.js]]&quot;,
+            &quot;text&quot;: &quot;&lt;&lt;lorem-ipsum&gt;&gt;&quot;
+        },
+        &quot;$:/plugins/tiddlywiki/dynaview/zoomable-diagram/Potatoes&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/tiddlywiki/dynaview/zoomable-diagram/Potatoes&quot;,
+            &quot;caption&quot;: &quot;Potatoes&quot;,
+            &quot;tags&quot;: &quot;[[$:/plugins/tiddlywiki/dynaview/zoomable-diagram/Server Architecture]]&quot;,
+            &quot;text&quot;: &quot;&lt;&lt;lorem-ipsum&gt;&gt;&quot;
+        },
+        &quot;$:/plugins/tiddlywiki/dynaview/zoomable-diagram/Carrots&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/tiddlywiki/dynaview/zoomable-diagram/Carrots&quot;,
+            &quot;caption&quot;: &quot;Carrots&quot;,
+            &quot;tags&quot;: &quot;[[$:/plugins/tiddlywiki/dynaview/zoomable-diagram/Potatoes]]&quot;,
+            &quot;text&quot;: &quot;&lt;&lt;lorem-ipsum&gt;&gt;&quot;
+        },
+        &quot;$:/plugins/tiddlywiki/dynaview/zoomable-diagram/Apricots&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/tiddlywiki/dynaview/zoomable-diagram/Apricots&quot;,
+            &quot;caption&quot;: &quot;Apricots&quot;,
+            &quot;tags&quot;: &quot;[[$:/plugins/tiddlywiki/dynaview/zoomable-diagram/Potatoes]]&quot;,
+            &quot;text&quot;: &quot;&lt;&lt;lorem-ipsum&gt;&gt;&quot;
+        },
+        &quot;$:/plugins/tiddlywiki/dynaview/examples/zoomable-diagram&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/tiddlywiki/dynaview/examples/zoomable-diagram&quot;,
+            &quot;tags&quot;: &quot;$:/tags/dynaviewExamples&quot;,
+            &quot;caption&quot;: &quot;Zoomable Diagram&quot;,
+            &quot;text&quot;: &quot;\\define lorem-ipsum()\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n\\end\n\n\\define zoomable-diagram(tag,level:\&quot;1 2 3 4 5 6 7\&quot;)\n&lt;div class={{{ $level$ +[addprefix[zoomable-diagram-level-]addprefix[zoomable-diagram-list ]] }}}&gt;\n\t&lt;$list filter=\&quot;[all[shadows+tiddlers]tag[$tag$]]\&quot;&gt;\n\t\t&lt;div class=\&quot;zoomable-diagram-item\&quot;&gt;\n\t\t\t&lt;div class=\&quot;zoomable-diagram-title\&quot;&gt;\n\t\t\t\t&lt;$transclude field=\&quot;caption\&quot; mode=\&quot;inline\&quot;/&gt;\n\t\t\t&lt;/div&gt;\n\t\t\t&lt;div class=\&quot;zoomable-diagram-body\&quot;&gt;\n\t\t\t\t&lt;div class=\&quot;zoomable-diagram-text\&quot;&gt;\n\t\t\t\t\t&lt;$transclude field=\&quot;text\&quot; mode=\&quot;block\&quot;/&gt;\n\t\t\t\t&lt;/div&gt;\n\t\t\t\t&lt;div class=\&quot;zoomable-diagram-children\&quot;&gt;\n\t\t\t\t\t&lt;$set name=\&quot;new-level\&quot; filter=\&quot;\&quot;\&quot; $level$ +[butfirst[]] \&quot;\&quot;\&quot;&gt;\n\t\t\t\t\t\t&lt;$macrocall $name=\&quot;zoomable-diagram\&quot; tag=&lt;&lt;currentTiddler&gt;&gt; level=&lt;&lt;new-level&gt;&gt;/&gt;\n\t\t\t\t\t&lt;/$set&gt;\n\t\t\t\t&lt;/div&gt;\n\t\t\t&lt;/div&gt;\n\t\t&lt;/div&gt;\n\t&lt;/$list&gt;\n&lt;/div&gt;\n\\end\n\n//Zoom into the diagram below to find out more//\n\n''N.B. This example only works in Safari at the moment''\n\n&lt;style&gt;\n.zoomable-diagram-wrapper {\n\tmin-height: 300px;\n}\n\n.zoomable-diagram-list {\n\tdisplay: flex;\n\tflex-direction: row;\n\tline-height: 1.5;\n}\n\n.zoomable-diagram-level-1 {font-size: 1em;}\n.zoomable-diagram-level-2 {font-size: 0.8em;}\n.zoomable-diagram-level-3 {font-size: 0.6em;}\n.zoomable-diagram-level-4 {font-size: 0.4em;}\n\n.zoomable-diagram-level-1,\n.zoomable-diagram-level-2,\n.zoomable-diagram-level-3,\n.zoomable-diagram-level-4,\n.zoomable-diagram-text {\n\ttransition: opacity 150ms ease-in-out;\n}\n\nbody.tc-dynaview.tc-dynaview-zoom-factor-1 .zoomable-diagram-level-1 {opacity: 1;}\nbody.tc-dynaview.tc-dynaview-zoom-factor-1 .zoomable-diagram-level-2 {opacity: 0;}\nbody.tc-dynaview.tc-dynaview-zoom-factor-1 .zoomable-diagram-level-3 {opacity: 0;}\nbody.tc-dynaview.tc-dynaview-zoom-factor-1 .zoomable-diagram-level-4 {opacity: 0;}\n\nbody.tc-dynaview.tc-dynaview-zoom-factor-2 .zoomable-diagram-level-1 {opacity: 1;}\nbody.tc-dynaview.tc-dynaview-zoom-factor-2 .zoomable-diagram-level-1 &gt; .zoomable-diagram-item &gt; .zoomable-diagram-body &gt; .zoomable-diagram-text {opacity: 0;}\nbody.tc-dynaview.tc-dynaview-zoom-factor-2 .zoomable-diagram-level-2 {opacity: 1;}\nbody.tc-dynaview.tc-dynaview-zoom-factor-2 .zoomable-diagram-level-3 {opacity: 0;}\nbody.tc-dynaview.tc-dynaview-zoom-factor-2 .zoomable-diagram-level-4 {opacity: 0;}\n\nbody.tc-dynaview.tc-dynaview-zoom-factor-3 .zoomable-diagram-level-1 {opacity: 1;}\nbody.tc-dynaview.tc-dynaview-zoom-factor-3 .zoomable-diagram-level-1 &gt; .zoomable-diagram-item &gt; .zoomable-diagram-body &gt; .zoomable-diagram-text {opacity: 0;}\nbody.tc-dynaview.tc-dynaview-zoom-factor-3 .zoomable-diagram-level-2 {opacity: 1;}\nbody.tc-dynaview.tc-dynaview-zoom-factor-3 .zoomable-diagram-level-2 &gt; .zoomable-diagram-item &gt; .zoomable-diagram-body &gt; .zoomable-diagram-text {opacity: 0;}\nbody.tc-dynaview.tc-dynaview-zoom-factor-3 .zoomable-diagram-level-3 {opacity: 1;}\nbody.tc-dynaview.tc-dynaview-zoom-factor-3 .zoomable-diagram-level-4 {opacity: 0;}\n\nbody.tc-dynaview.tc-dynaview-zoom-factor-4 .zoomable-diagram-level-1 {opacity: 1;}\nbody.tc-dynaview.tc-dynaview-zoom-factor-4 .zoomable-diagram-level-1 &gt; .zoomable-diagram-item &gt; .zoomable-diagram-body &gt; .zoomable-diagram-text {opacity: 0;}\nbody.tc-dynaview.tc-dynaview-zoom-factor-4 .zoomable-diagram-level-2 {opacity: 1;}\nbody.tc-dynaview.tc-dynaview-zoom-factor-4 .zoomable-diagram-level-2 &gt; .zoomable-diagram-item &gt; .zoomable-diagram-body &gt; .zoomable-diagram-text {opacity: 0;}\nbody.tc-dynaview.tc-dynaview-zoom-factor-4 .zoomable-diagram-level-3 {opacity: 1;}\nbody.tc-dynaview.tc-dynaview-zoom-factor-4 .zoomable-diagram-level-3 &gt; .zoomable-diagram-item &gt; .zoomable-diagram-body &gt; .zoomable-diagram-text {opacity: 0;}\nbody.tc-dynaview.tc-dynaview-zoom-factor-4 .zoomable-diagram-level-4 {opacity: 1;}\n\n.zoomable-diagram-item {\n\tmargin: 0.5em;\n\tflex: 1 1 0;\n}\n\n.zoomable-diagram-title {\n\tfont-weight: bold;\n}\n\n.zoomable-diagram-body {\n\tdisplay: flex;\n\tflex-direction: column;\n\tposition: relative;\n}\n\n.zoomable-diagram-text {\n\tposition: absolute;\n}\n\n.zoomable-diagram-children {\n}\n\n&lt;/style&gt;\n\n&lt;div class=\&quot;zoomable-diagram-wrapper\&quot;&gt;\n&lt;&lt;zoomable-diagram \&quot;$:/tags:/ZoomableDiagram\&quot;&gt;&gt;\n&lt;/div&gt;\n&quot;
+        },
+        &quot;$:/plugins/tiddlywiki/dynaview/examples/zoomable-tooltips&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/tiddlywiki/dynaview/examples/zoomable-tooltips&quot;,
+            &quot;tags&quot;: &quot;$:/tags/dynaviewExamples&quot;,
+            &quot;caption&quot;: &quot;Zoomable Tooltips&quot;,
+            &quot;text&quot;: &quot;//Zoom into the images below to see their titles//\n\n''N.B. This example only works in Safari at the moment''\n\n&lt;style&gt;\n.zoomable-tooltip-demo-container {\n\tdisplay: flex;\n\tflex-wrap: wrap;\n}\n\n.zoomable-tooltip-demo-item {\n\tdisplay: flex;\n\tflex-direction: column;\n\tflex: 0 0 auto;\n\tpadding: 4px;\n\twidth: 5em;\n\theight: 7em;\n}\n\n.zoomable-tooltip-demo-item-image {\n\tflex: 0 0 auto;\n}\n\n.zoomable-tooltip-demo-item-image svg {\n\twidth: 4em;\n\theight: 4em;\n}\n\n.zoomable-tooltip-demo-item-text {\n\tfont-size:0.3em;\n\tflex: 0 0 auto;\n\tline-height: 1.1;\n\ttext-align: center;\n    text-align: center;\n    background: #f7f747;\n    border: 1px solid #c2c235;\n    padding: 2px;\n    border-radius: 2px;\n}\n&lt;/style&gt;\n&lt;div class=\&quot;zoomable-tooltip-demo-container\&quot;&gt;\n&lt;$list filter=\&quot;[all[tiddlers+shadows]tag[$:/tags/Image]]\&quot;&gt;\n&lt;div class=\&quot;zoomable-tooltip-demo-item\&quot;&gt;\n&lt;span class=\&quot;zoomable-tooltip-demo-item-image\&quot;&gt;\n&lt;$transclude/&gt;\n&lt;/span&gt;\n&lt;span class=\&quot;zoomable-tooltip-demo-item-text tc-dynaview-zoom-visible-3-and-above\&quot;&gt;\n&lt;$text text=&lt;&lt;currentTiddler&gt;&gt;/&gt;\n&lt;/span&gt;\n&lt;/div&gt;\n&lt;/$list&gt;\n&lt;/div&gt;\n&quot;
+        },
+        &quot;$:/plugins/tiddlywiki/dynaview/examples&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/tiddlywiki/dynaview/examples&quot;,
+            &quot;text&quot;: &quot;&lt;&lt;tabs \&quot;[all[tiddlers+shadows]tag[$:/tags/dynaviewExamples]!has[draft.of]]\&quot; \&quot;$:/plugins/tiddlywiki/dynaview/examples/progressive-text\&quot;&gt;&gt;\n&quot;
+        },
+        &quot;$:/plugins/tiddlywiki/dynaview/macros&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/tiddlywiki/dynaview/macros&quot;,
+            &quot;tags&quot;: &quot;$:/tags/Macro&quot;,
+            &quot;text&quot;: &quot;\\define transclude-when-visible(tiddler,mode:\&quot;block\&quot;,state,minHeight:\&quot;1em\&quot;,loadingText:\&quot;&amp;hellip;\&quot;)\n&lt;$reveal state=&lt;&lt;__state__&gt;&gt; type=\&quot;match\&quot; text=\&quot;visible\&quot; tag=\&quot;div\&quot;&gt;\n&lt;div class=\&quot;tc-dynaview-set-tiddler-when-visible\&quot; data-dynaview-set-tiddler=&lt;&lt;__state__&gt;&gt; data-dynaview-set-value=\&quot;visible\&quot;&gt;\n&lt;$transclude tiddler=&lt;&lt;__tiddler__&gt;&gt; mode=&lt;&lt;__mode__&gt;&gt;/&gt;\n&lt;/div&gt;\n&lt;/$reveal&gt;\n&lt;$reveal state=&lt;&lt;__state__&gt;&gt; type=\&quot;nomatch\&quot; text=\&quot;visible\&quot; tag=\&quot;div\&quot;&gt;\n&lt;div class=\&quot;tc-dynaview-set-tiddler-when-visible\&quot; style=\&quot;min-height: $minHeight$;\&quot; data-dynaview-set-tiddler=&lt;&lt;__state__&gt;&gt; data-dynaview-set-value=\&quot;visible\&quot;&gt;\n$loadingText$\n&lt;/div&gt;\n&lt;/$reveal&gt;\n\\end\n&quot;
+        },
+        &quot;$:/plugins/tiddlywiki/dynaview/readme&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/tiddlywiki/dynaview/readme&quot;,
+            &quot;text&quot;: &quot;! Dynaview\n\nThis plugin makes it possible to build user interfaces that dynamically respond to changes in the browser viewport via scrolling or zooming:\n\n* CSS classes that allow rendering to be deferred until the output is scrolled into view\n* CSS classes that allow the opacity of DOM elements to vary according to the current zoom level\n* A daemon that can dynamically update a pair of state tiddlers with the current dimensions of the browser viewport\n* A daemon that can dynamically update the address bar with the title of the tiddler at the top of the viewport\n\nSome points to note about the zoom features:\n\n&lt;&lt;&lt;\n\n* The zoom level currently only works on Safari, both on Mac OS and on the iPhone/iPad\n* The zoom level tracked by the plugin is the pinch-zoom level, and not the text-zoom level\n* Rather than being progressively rendered as needed, hidden item are rendered with zero opacity. Which means that they can still be interacted with\n\nThis is really just a proof of concept to allow the user experience to be evaluated. A production version would need to work in all browsers, which would mean adopting a polyfill such as [[Hammer.js|http://hammerjs.github.io/]] to give us manual pan and zoom support. It would also allow deeper levels of zoom.\n\n&lt;&lt;&lt;\n&quot;
+        },
+        &quot;$:/plugins/tiddlywiki/dynaview/styles&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/tiddlywiki/dynaview/styles&quot;,
+            &quot;tags&quot;: &quot;$:/tags/Stylesheet&quot;,
+            &quot;text&quot;: &quot;\\rules only filteredtranscludeinline transcludeinline macrodef macrocallinline\n\nbody.tc-dynaview .tc-dynaview-zoom-visible-1-and-above,\nbody.tc-dynaview .tc-dynaview-zoom-visible-1a-and-above,\nbody.tc-dynaview .tc-dynaview-zoom-visible-1b-and-above,\nbody.tc-dynaview .tc-dynaview-zoom-visible-1c-and-above,\nbody.tc-dynaview .tc-dynaview-zoom-visible-2-and-above,\nbody.tc-dynaview .tc-dynaview-zoom-visible-2a-and-above,\nbody.tc-dynaview .tc-dynaview-zoom-visible-3-and-above,\nbody.tc-dynaview .tc-dynaview-zoom-visible-4-and-above,\nbody.tc-dynaview .tc-dynaview-zoom-visible-1,\nbody.tc-dynaview .tc-dynaview-zoom-visible-2,\nbody.tc-dynaview .tc-dynaview-zoom-visible-3,\nbody.tc-dynaview .tc-dynaview-zoom-visible-4 {\n\ttransition: opacity 150ms ease-in-out;\n\topacity: 0;\n}\n\nbody.tc-dynaview .tc-dynaview-zoom-visible-1-and-above {opacity: 1;}\nbody.tc-dynaview.tc-dynaview-zoom-factor-1a-and-above .tc-dynaview-zoom-visible-1a-and-above {opacity: 1;}\nbody.tc-dynaview.tc-dynaview-zoom-factor-1b-and-above .tc-dynaview-zoom-visible-1b-and-above {opacity: 1;}\nbody.tc-dynaview.tc-dynaview-zoom-factor-1c-and-above .tc-dynaview-zoom-visible-1c-and-above {opacity: 1;}\nbody.tc-dynaview.tc-dynaview-zoom-factor-2-and-above .tc-dynaview-zoom-visible-2-and-above {opacity: 1;}\nbody.tc-dynaview.tc-dynaview-zoom-factor-2a-and-above .tc-dynaview-zoom-visible-2a-and-above {opacity: 1;}\nbody.tc-dynaview.tc-dynaview-zoom-factor-3-and-above .tc-dynaview-zoom-visible-3-and-above {opacity: 1;}\nbody.tc-dynaview.tc-dynaview-zoom-factor-4-and-above .tc-dynaview-zoom-visible-4-and-above {opacity: 1;}\n\nbody.tc-dynaview.tc-dynaview-zoom-factor-1 .tc-dynaview-zoom-visible-1 {opacity: 1;}\nbody.tc-dynaview.tc-dynaview-zoom-factor-2 .tc-dynaview-zoom-visible-2 {opacity: 1;}\nbody.tc-dynaview.tc-dynaview-zoom-factor-3 .tc-dynaview-zoom-visible-3 {opacity: 1;}\nbody.tc-dynaview.tc-dynaview-zoom-factor-4 .tc-dynaview-zoom-visible-4 {opacity: 1;}\n&quot;
         }
     }
 }</pre>
@@ -9467,28 +9797,73 @@ Error message and password prompt
     }
 }</pre>
 </div>
+<div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="" description="Stacked card storyview" list="readme" plugin-type="plugin" title="$:/plugins/tiddlywiki/stacked-view" type="application/json" version="5.1.19">
+<pre>{
+    &quot;tiddlers&quot;: {
+        &quot;$:/plugins/tiddlywiki/stacked-view/StackedControls&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/tiddlywiki/stacked-view/StackedControls&quot;,
+            &quot;caption&quot;: &quot;Stacked View&quot;,
+            &quot;tags&quot;: &quot;$:/tags/SideBar&quot;,
+            &quot;text&quot;: &quot;Set the [[fan separation|$:/config/StackedStoryViewFanHeight]]:\n\n* &lt;$button set=\&quot;$:/config/StackedStoryViewFanHeight\&quot; setTo=\&quot;-10\&quot;&gt;-10&lt;/$button&gt;\n* &lt;$button set=\&quot;$:/config/StackedStoryViewFanHeight\&quot; setTo=\&quot;0\&quot;&gt;0&lt;/$button&gt;\n* &lt;$button set=\&quot;$:/config/StackedStoryViewFanHeight\&quot; setTo=\&quot;10\&quot;&gt;10&lt;/$button&gt;\n* &lt;$button set=\&quot;$:/config/StackedStoryViewFanHeight\&quot; setTo=\&quot;30\&quot;&gt;30&lt;/$button&gt;\n* &lt;$button set=\&quot;$:/config/StackedStoryViewFanHeight\&quot; setTo=\&quot;50\&quot;&gt;50&lt;/$button&gt;\n* &lt;$button set=\&quot;$:/config/StackedStoryViewFanHeight\&quot; setTo=\&quot;100\&quot;&gt;100&lt;/$button&gt;\n* &lt;$button set=\&quot;$:/config/StackedStoryViewFanHeight\&quot; setTo=\&quot;150\&quot;&gt;150&lt;/$button&gt;\n* &lt;$button set=\&quot;$:/config/StackedStoryViewFanHeight\&quot; setTo=\&quot;200\&quot;&gt;200&lt;/$button&gt;\n* &lt;$button set=\&quot;$:/config/StackedStoryViewFanHeight\&quot; setTo=\&quot;250\&quot;&gt;250&lt;/$button&gt;\n* &lt;$button set=\&quot;$:/config/StackedStoryViewFanHeight\&quot; setTo=\&quot;300\&quot;&gt;300&lt;/$button&gt;\n* &lt;$button set=\&quot;$:/config/StackedStoryViewFanHeight\&quot; setTo=\&quot;500\&quot;&gt;500&lt;/$button&gt;\n* &lt;$button set=\&quot;$:/config/StackedStoryViewFanHeight\&quot; setTo=\&quot;700\&quot;&gt;700&lt;/$button&gt;\n* &lt;$button set=\&quot;$:/config/StackedStoryViewFanHeight\&quot; setTo=\&quot;1500\&quot;&gt;1500&lt;/$button&gt;\n&quot;
+        },
+        &quot;$:/config/StackedStoryViewFanHeight&quot;: {
+            &quot;title&quot;: &quot;$:/config/StackedStoryViewFanHeight&quot;,
+            &quot;text&quot;: &quot;100&quot;
+        },
+        &quot;$:/plugins/tiddlywiki/stacked-view/readme&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/tiddlywiki/stacked-view/readme&quot;,
+            &quot;text&quot;: &quot;This plugin provides a new story visualisation that displays individual tiddlers as a stack of cards. It is currently experimental and incomplete.\n\n[[Source code|https://github.com/Jermolene/TiddlyWiki5/blob/master/plugins/tiddlywiki/stacked-view]]\n&quot;
+        },
+        &quot;$:/plugins/tiddlywiki/stacked-view/config-macros/stacked-storyview&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/tiddlywiki/stacked-view/config-macros/stacked-storyview&quot;,
+            &quot;tags&quot;: &quot;$:/tags/Macro&quot;,
+            &quot;text&quot;: &quot;\\define tv-stacked-storyview-fan-height-config-title() $:/config/StackedStoryViewFanHeight\n&quot;
+        },
+        &quot;$:/plugins/tiddlywiki/stacked-view/stacked.js&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/tiddlywiki/stacked-view/stacked.js&quot;,
+            &quot;text&quot;: &quot;/*\\\ntitle: $:/plugins/tiddlywiki/stacked-view/stacked.js\ntype: application/javascript\nmodule-type: storyview\n\nKeeps tiddlers in a stack\n\n\\*/\n(function(){\n\n/*jslint node: true, browser: true */\n/*global $tw: false */\n\&quot;use strict\&quot;;\n\nvar easing = \&quot;cubic-bezier(0.645, 0.045, 0.355, 1)\&quot;; // From http://easings.net/#easeInOutCubic\n\nvar StackedListView = function(listWidget) {\n\tvar self = this;\n\tthis.listWidget = listWidget;\n\tthis.fanHeightConfigTitle = listWidget.getVariable(\&quot;tv-stacked-storyview-fan-height-config-title\&quot;);\n\tthis.placeTiddlers();\n};\n\nStackedListView.prototype.placeTiddlers = function() {\n\t// Initialise the stack of tiddler titles\n\tthis.listStack = [];\n\tvar numItems = this.listWidget.children.length,\n\t\tt, itemWidget,\n\t\tduration = $tw.utils.getAnimationDuration();\n\tfor(t=numItems-1; t&gt;=0; t--) {\n\t\titemWidget = this.listWidget.children[t];\n\t\tthis.listStack.push(itemWidget.parseTreeNode.itemTitle);\n\t}\n\t// Ensure the tiddler at the top of the history stack is at the top of the array\n\tvar history = this.listWidget.wiki.getTiddlerData(this.listWidget.historyTitle,[]);\n\tfor(t=0; t&lt;history.length; t++) {\n\t\tvar title = history[t].title;\n\t\tif(this.listStack.indexOf(title) !== -1) {\n\t\t\t$tw.utils.pushTop(this.listStack,title);\n\t\t}\n\t}\n\t// Get the configured fan height\n\tvar fanHeight = parseInt(this.listWidget.wiki.getTiddlerText(this.fanHeightConfigTitle),10);\n\t// Position each tiddler\n\tfor(var t=numItems-1; t&gt;=0; t--) {\n\t\t// Get the DOM node for this tiddler\n\t\titemWidget = this.listWidget.children[t];\n\t\tvar domNode = itemWidget.findFirstDomNode();\n\t\tif(domNode instanceof Element) {\n\t\t\t// Allows the width of the tiddler to be adjusted\n\t\t\t$tw.utils.addClass(domNode,\&quot;tc-storyview-zoomin-tiddler\&quot;);\n\t\t\t// Find the position of the tiddler in the stack\n\t\t\tvar pos = this.listStack.indexOf(itemWidget.parseTreeNode.itemTitle);\n\t\t\tif(pos !== -1) {\n\t\t\t\t// Style the tiddler to position it\n\t\t\t\tvar posFactor = pos/(numItems-1);\n\t\t\t\t$tw.utils.setStyle(domNode,[\n\t\t\t\t\t{position: \&quot;absolute\&quot;},\n\t\t\t\t\t{transformOrigin: \&quot;50% 0\&quot;},\n\t\t\t\t\t{transition: $tw.utils.roundTripPropertyName(\&quot;transform\&quot;) + \&quot; \&quot; + duration * (0.5 + posFactor) + \&quot;ms \&quot; + easing},\n\t\t\t\t\t{transform: \&quot;translateX(0px) translateY(\&quot; + (fanHeight * posFactor * posFactor) + \&quot;px) scale(\&quot; + (0.1 + posFactor * 0.9) + \&quot;)\&quot;},\n\t\t\t\t\t{zIndex: pos + \&quot;\&quot;}\n\t\t\t\t]);\n\t\t\t}\n\t\t}\n\t}\n};\n\nStackedListView.prototype.refreshStart = function(changedTiddlers,changedAttributes) {\n};\n\nStackedListView.prototype.refreshEnd = function(changedTiddlers,changedAttributes) {\n\tthis.placeTiddlers();\n};\n\nStackedListView.prototype.navigateTo = function(historyInfo) {\n};\n\nStackedListView.prototype.insert = function(widget) {\n};\n\nStackedListView.prototype.remove = function(widget) {\n\twidget.removeChildDomNodes();\n};\n\nexports.stacked = StackedListView;\n\n})();&quot;,
+            &quot;type&quot;: &quot;application/javascript&quot;,
+            &quot;module-type&quot;: &quot;storyview&quot;
+        },
+        &quot;$:/core/images/storyview-stacked&quot;: {
+            &quot;title&quot;: &quot;$:/core/images/storyview-stacked&quot;,
+            &quot;tags&quot;: &quot;$:/tags/Image&quot;,
+            &quot;text&quot;: &quot;&lt;svg class=\&quot;tc-image-storyview-stack tc-image-button\&quot; width=\&quot;22pt\&quot; height=\&quot;22pt\&quot; viewBox=\&quot;0 0 128 128\&quot;&gt;\n    &lt;g fill-rule=\&quot;evenodd\&quot;&gt;\n        &lt;path d=\&quot;M8.00697327,0 C3.58484404,0 0,3.59075293 0,8.00697327 L0,119.993027 C0,124.415156 3.59075293,128 8.00697327,128 L119.993027,128 C124.415156,128 128,124.409247 128,119.993027 L128,8.00697327 C128,3.58484404 124.409247,0 119.993027,0 L8.00697327,0 L8.00697327,0 Z M32,43 L32,37.3807213 C32,34.4040057 34.3875896,32 37.3328305,32 L45.5,32 L45.5,32 L84,32 L90.6671695,32 C93.6079301,32 96,34.409031 96,37.3807213 L96,43 L32,43 Z M30,48 L23.9992458,48 C19.5813843,48 16,51.578055 16,56.0085154 L16,103.991485 C16,108.414466 19.5881049,112 23.9992458,112 L104.000754,112 C108.418616,112 112,108.421945 112,103.991485 L112,56.0085154 C112,51.5855345 108.411895,48 104.000754,48 L98.5,48 L30,48 Z M80,27 L80,23.7529272 C80,22.2325275 78.803965,21 77.3335847,21 L50.6664153,21 C49.1937948,21 48,22.2299564 48,23.7529272 L48,27 L80,27 Z\&quot;&gt;&lt;/path&gt;\n    &lt;/g&gt;\n&lt;/svg&gt;&quot;
+        }
+    }
+}</pre>
+</div>
 <div created="20190805045758502" modified="20190805045804549" title="$:/SiteSubtitle">
 <pre>Achive what I read</pre>
 </div>
 <div created="20190805045751710" modified="20190805045754878" title="$:/SiteTitle">
 <pre>Papers</pre>
 </div>
-<div created="20190805050243155" modified="20190805202648363" title="$:/state/showeditpreview">
+<div created="20190805050243155" modified="20190806202529386" title="$:/state/showeditpreview">
 <pre>yes</pre>
 </div>
-<div created="20190805045850698" modified="20190805050021566" title="$:/state/tab--1963855381">
-<pre>$:/themes/tiddlywiki/vanilla/themetweaks</pre>
+<div created="20190806202306646" modified="20190806202308127" title="$:/state/sidebar">
+<pre>yes</pre>
 </div>
-<div created="20190805045848352" modified="20190805201927820" title="$:/state/tab-1749438307">
-<pre>$:/core/ui/ControlPanel/Appearance</pre>
+<div created="20190805045850698" modified="20190806025911851" title="$:/state/tab--1963855381">
+<pre>$:/core/ui/ControlPanel/Palette</pre>
 </div>
-<div created="20190805053838804" modified="20190805053838804" title="$:/state/tab/moresidebar-1850697562">
+<div created="20190806044431788" modified="20190806044435886" title="$:/state/tab-1163638994">
+<pre>$:/core/ui/MoreSideBar/Plugins/Languages</pre>
+</div>
+<div created="20190806044614826" modified="20190806044617171" title="$:/state/tab-1342078386">
+<pre>$:/core/ui/ControlPanel/Plugins/Add/Plugins</pre>
+</div>
+<div created="20190805045848352" modified="20190806044532787" title="$:/state/tab-1749438307">
+<pre>$:/core/ui/ControlPanel/Plugins</pre>
+</div>
+<div created="20190805053838804" modified="20190806044832723" title="$:/state/tab/moresidebar-1850697562">
 <pre>$:/core/ui/MoreSideBar/Tags</pre>
 </div>
-<div created="20190805050127734" modified="20190805053836957" title="$:/state/tab/sidebar--595412856">
+<div created="20190805050127734" modified="20190806044530848" title="$:/state/tab/sidebar--595412856">
 <pre>$:/core/ui/SideBar/More</pre>
 </div>
-<div created="20190805202614349" list="References [[Zou et al, 2019, Nature Genetics]]" modified="20190805202840441" title="$:/StoryList">
+<div created="20190806020704735" list="References [[Zou et al, 2019, Nature Genetics]] [[Zou et al, 2019, Nature Genetics-5]]" modified="20190806194314236" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20190805050017364" modified="20190805050017364" title="$:/temp/HidePluginWarning">
@@ -10223,10 +10598,10 @@ This plugin also requires the JSZip plugin ([[$:/plugins/tiddlywiki/jszip]]) to 
 <div author="JeremyRuston" core-version="&gt;=5.0.0" created="20190805045901124" dependents="" description="Basic theme" modified="20190805045901124" name="Vanilla" original-plugin-type="theme" original-tags="" original-title="$:/themes/tiddlywiki/vanilla" original-type="application/json" plugin-priority="0" server-url="https://tiddlywiki.com/library/v5.1.19/index.html" tags="$:/tags/RemoteAssetInfo" title="$:/temp/RemoteAssetInfo/https://tiddlywiki.com/library/v5.1.19/index.html/$:/themes/tiddlywiki/vanilla" type="text/vnd.tiddlywiki" version="5.1.19">
 <pre></pre>
 </div>
-<div created="20190805045903581" modified="20190805045904478" title="$:/temp/RemoteAssetSearch/$:/config/OfficialPluginLibrary">
-<pre>markdown</pre>
+<div created="20190805045903581" modified="20190806044625835" title="$:/temp/RemoteAssetSearch/$:/config/OfficialPluginLibrary">
+<pre></pre>
 </div>
-<div created="20190805045901119" modified="20190805045901119" tags="$:/tags/ServerConnection" title="$:/temp/ServerConnection/https://tiddlywiki.com/library/v5.1.19/index.html" url="https://tiddlywiki.com/library/v5.1.19/index.html">
+<div created="20190806044642814" modified="20190806044642814" tags="$:/tags/ServerConnection" title="$:/temp/ServerConnection/https://tiddlywiki.com/library/v5.1.19/index.html" url="https://tiddlywiki.com/library/v5.1.19/index.html">
 <pre>loaded</pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-priority="0" plugin-type="theme" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.19">
@@ -10362,31 +10737,50 @@ This plugin also requires the JSZip plugin ([[$:/plugins/tiddlywiki/jszip]]) to 
 
 * </pre>
 </div>
-<div created="20190805202650892" modified="20190805230142847" tags="review [[machine learning]]" title="Zou et al, 2019, Nature Genetics" type="text/x-markdown">
+<div created="20190805202650892" modified="20190807005106661" tags="review [[machine learning]] toc" title="Zou et al, 2019, Nature Genetics" type="text/vnd.tiddlywiki">
 <pre>`8/5/2019`
 
 * Whole genome deep learning
-* Zou J, …, Telenti A, 2019, Nature genetics, [https://doi.org/10.1038/s41588-018-0295-5](https://doi.org/10.1038/s41588-018-0295-5)
+* Zou J, …, Telenti A, 2019, Nature genetics, https://doi.org/10.1038/s41588-018-0295-5
 
 
-# Abstract
+!Abstract
 
-- We discuss successful applications in the fields of regulatory genomics, variant calling and pathogenicity scores.
-- We include general guidance for how to effectively use deep learning methods as well as a practical guide to tools and resources.
-- Interactive online tutorial: https://??
+* We discuss successful applications in the fields of regulatory genomics, variant calling and pathogenicity scores.
+* We include general guidance for how to effectively use deep learning methods as well as a practical guide to tools and resources.
+* Interactive online tutorial: https://colab.research.google.com/drive/17E4h5aAOioh5DiTo7MZg4hpL6Z_0FyWr
 
 
-# Introduction
+!Introduction
 
-- A survey of deep learning in the biomedical field, which has been broadly covered in recent reviews [1-5].
-  - [1] Angermueller et al., 2016, Mol. Syst. Biol., Deep learning for computational biology.
-  - [2] Ching et al., 2018, J. R. Soc. Interface, Opportunities and obstacles for deep learning in biology and medicine.
-  - [3] Telenti et al., 2018, Hum. Mol. Genet., Deep learning of genomic variation and regulatory network data.
-  - [4] Yue and Wang, 2018, Arxiv, Deep learning for genomics: a concise overview. Preprint at https://arxiv.org/abs/1802.00810
-  - [5] Camacho et al., 2018, Cell, Next-generation machine learning for biological networks.
+* A survey of deep learning in the biomedical field, which has been broadly covered in recent reviews [1-5].
+  * [1] Angermueller et al., 2016, Mol. Syst. Biol., Deep learning for computational biology.
+  * [2] Ching et al., 2018, J. R. Soc. Interface, Opportunities and obstacles for deep learning in biology and medicine.
+  * [3] Telenti et al., 2018, Hum. Mol. Genet., Deep learning of genomic variation and regulatory network data.
+  * [4] Yue and Wang, 2018, Arxiv, Deep learning for genomics: a concise overview. Preprint at https://arxiv.org/abs/1802.00810
+  * [5] Camacho et al., 2018, Cell, Next-generation machine learning for biological networks.
 
 -----
-# 1. Deep learning as a class of machine learning methods
+![[1. Deep learning as a class of machine learning methods|Zou et al, 2019, Nature Genetics-1]]
+
+![[2. Setting up deep learning|Zou et al, 2019, Nature Genetics-2]]
+
+![[3. How to use deep learning effectively|Zou et al, 2019, Nature Genetics-3]]
+
+![[4. Interpreting deep learning models|Zou et al, 2019, Nature Genetics-4]]
+
+![[5. Applications in genomics|Zou et al, 2019, Nature Genetics-5]]
+-----
+
+!6. Resources
+
+!!Cloud platforms
+
+
+</pre>
+</div>
+<div created="20190806154933044" modified="20190806155026675" tags="review [[machine learning]]" title="Zou et al, 2019, Nature Genetics-1" type="text/x-markdown">
+<pre># 1. Deep learning as a class of machine learning methods
 
 - Machine learning techniques have been extensively used in genomics research [3,6]
   - [3] Telenti et al., 2018, Hum. Mol. Genet., Deep learning of genomic variation and regulatory network data.
@@ -10421,9 +10815,10 @@ This plugin also requires the JSZip plugin ([[$:/plugins/tiddlywiki/jszip]]) to 
 - Researchers must be wary of high accuracy due to data imbalance or bias that makes classification too easy.
 - A good practice is to compare against simpler machine learning models on the same dataset.
 - Deep learning can achieve high accuracy, but the interpretation of results is more challenging than for standard statistical models.
------
-
-# 2. Setting up deep learning
+-----</pre>
+</div>
+<div created="20190806155103040" modified="20190806155151244" tags="review [[machine learning]]" title="Zou et al, 2019, Nature Genetics-2" type="text/x-markdown">
+<pre># 2. Setting up deep learning
 
 - Deep learning is an umbrella term that refers to the recent advances in neural networks and the corresponding training platforms (e.g., TransorFlow and PyTorch).
 
@@ -10455,13 +10850,185 @@ This plugin also requires the JSZip plugin ([[$:/plugins/tiddlywiki/jszip]]) to 
 - **Feature importance**: A saliency score for each input feature (for example, each nucleotide) that measures the extent to which changes in that feature affect the prediction.
 -----
 
-**Three architectures of neuroal netowrk**
+## 2-1. Three architectures of neuroal netowrk
 
-- There are three common families of architectures for connecting neurons in to a network:
-  1. 
+1. **Feed forward** is the simpleast architecture [7].
+  - [7] Goodfellow et al., 2016, MIT Press, Deep learning.
+  - Every neuron of layer i is connected only to neurons of layer i + 1, and all the connection edges can have different weights.
+  - Feed-forward architecture is suitable for generic prediction problems when there are no special relations among the input data features.
+
+2. **Convolutional**: In a convolutional neural netowrk (CNN), a neuron is scanned across the input matrix, and at each position of the input, the CNN computes the local weighted sum and produces an output value [9].
+  - [9] Krizhevskyet al., 2012, Adv. Neural Inf. Process. Syst., Imagenet classification with deep
+convolutional neural networks.
+  - This procedure is very similar to taking the position weight matrix of a motif and scanning it across the DNA sequence.
+  - CNNs are useful in settings in which some spatially invariant patterns in the input are expected.
+
+3. **Recurrent neural networks (RNN)** are designed for sequential or time-series data [7].
+  - [7] Goodfellow et al., 2016, MIT Press, Deep learning.
+  - At each point in the sequence, a neural network, which could be feed-forward or convolutional, is applied to generate an internal signal, which is also fed to the next step of the RNN.
+  - Hidden layers of the RNN can be viewed as memory states that retain information from the sequence previously observed and are updated at each time step.
 
 
+## 2-2. Architectures for unsupervised learning
 
+- **Autoencoders** that perform nonlinear dimensionality reduction [10] that are the most common.
+  - [10] Hinton et al., 2006, Science, Reducing the dimensionality of data
+with neural networks.
+  - In contrast to principal component analysis, which is linear.
+  - In an autoencoder, the output is set to be the input, and the netowrk is encouraged to find a low-dimensional space that compresses the original information and reconstructs the inputs.
+
+
+## 2-3. Training a neural network
+
+- Training a neural network starts with a labeled dataset of (Xi, Yi), where each Xi is the ith input, and Yi is its output label.
+
+- Each traning point Xi is fed into the network, and the entwork's output is evaluated against the true label Yi to produce a **loss L(Y'i, Yi)**.
+  - **Loss **is the sum of the errors made for each example.
+  - The lower the loss, the better the model.
+  - Commonly used loss functions include **squared error** and **cross-entropy**.
+  - **Squared error** measures the difference between predicted and actual output values, which is especially relevant when the output is a continuous value.
+  - **Cross-entropy** measures the difference between two probability distributions over the same set of underlying events or classes, as is appropriate when the ouput is categorical [7].
+    - [7] Goodfellow et al., 2016, MIT Press, Deep learning.
+
+**Back-progapation**
+
+- To train the network, the derivative of -L(Y'i, Yi) is computed with respect to the **parameters of the network**, which are the collection of neuron weights.
+  - By updating the weights in a small step in the direction of the derivative, the network's prediction loss can be decreased, and its accuracy can be increased.
+  - The **derivative** can be efficiently computed for each training point via the chain rule from calculus;
+  - This process is commonly called **back-propagation**.
+  - In parallel, the network's accuracy is also evaluated on the validation data, which are not used to update the weights.
+
+- A good practice to avoid overfitting is to stop the training updates when the validation accuracy begins to decrease.
+  - More sophisticated techniques such as L2 regularization on the weights and dropout are also effective in controlling overfitting.
+  - L2 regularization encourages simpler, and thus more generalizable, models by penalizing models with large weights [7].
+  - Dropout is a training process that randomly ignores nodes to mitigate overfitting [11].
+    - [11] Srivastava et al., 2014, J. Mach. Learn. Res., Dropout: a simple way to prevent neural netowrks from overfitting.</pre>
+</div>
+<div created="20190806155207905" modified="20190806190153621" tags="review [[machine learning]]" title="Zou et al, 2019, Nature Genetics-3" type="text/x-markdown">
+<pre># 3. How to use deep learning effectively
+
+## 3-1. Data biases
+
+- The most important step in building an effective deep leanrning model is to first curate an appropriate training dataset and to select a suitable evaluation metric.
+  - The training set should be constructed to ensure that confounding biases that may artificially inflate performance are not introduced.
+
+- For example, known pathogenic genetic variants may cluster in certain regions of the genome, i.e., exons or promoters, whereas known neutral variants may be more broadly distributed throughout the genome.
+  - A neural network naively applied to these unbalanced data may appear to perform well, but in reality it would probably learn to identify regions of the genome enriched in pathogenic variants without actually being able to distinguish neutral from pathogenic variants within these important genomic regions.
+
+- Thus, it is important to design training datasets that are appropriately balanced for confounders that would detrimentally affect performance when applied to real-world-use cases [12].
+  - [12] Khodabandelou et al., 2018, BioRxiv, Genome functional annotation using deep convolutional neural network.
+
+- Furthermore, genomics data are often highly imblanced [13].
+  - [13] Zhou et al., 2015, Nat. Methods, Predicting effects of noncoding variants with deep learning-based sequence model.
+  - For example, there are many more variants that are not disease causing than are disease causing, or only a small fraction of the population may develop a particular disease to be predicted.
+  - Therefore it is oftne more meaningful to assess precision and recall, measures of classifier performance that account for the imbalance of calsses in a dataset rather than simple accuracy [14].
+    - [14] Powers et al., 2011, J. Mach. Learn. Technol., Evaluation: from precision, recall and F-measure to ROC informedness, markedness and correlation.
+
+## 3-2. Domain knowledge
+
+- Successful application of deep learning also requires **domain knowledge**, as with all other machine learning methods.
+  - For example, in **support-vector-machine classification** and **logistic regression**, domain knowledge is used to construct features from data, and in **Bayesian models**, expertise is incorporated into the prior distributions.
+  - In deep learning, domain knowledge is built into the design of the network architecture.
+  - The performance of the network crucially depends on understanding the assumptions and limiataions behind different architectures.
+
+- Biological knowlege indicates that regulatory elements may be effective even after small spatial translations, thus suggesting that CNN might model them effectively.
+  - Moreover, the regulatory motifs are known to have a tendency to be relatively short (&lt;20 nt) thus suggesting that convolution filters should also be small (&lt;20 nt).
+  - Finally, if enhancers are being modeled, most of the activity is known to have a tendency to be clustered in regions from several hudred base pairs to two kilobases.
+  - Consequently, a reasonable design would be to limit inputs to the network to &lt;2 kb.
+  - Mismatch between the model's prior and the undelying biology can lead to poor performance.
+
+- In computer vision, researchers have observed that performance can improve with very deep network (more than 100 layers).
+  - In most genomics applications, fewer than five layers are sufficient [13,15].
+    - [13] Zhou et al., 2015, Nat. Methods, Predicting effects of noncoding variants with deep learning-based sequence model.
+    - [15] Kelley et al., 2016, Genome Res., Basset: learning the regulatory code of the accessible genome with deep convolutional neural networks.
+  - Even relatively shallow networks can still have millions of parameters, and the most important factor that determines the success of a model is the availability of a large corpus of labeled training data.
+
+- Most successful biological applications of deep learning have at least several thousand labeled examples [1].
+  - It is always good practice to train simpler machine learning models - linear regression, least absolute shrinkage and selection operator (LASSO), gradient boosting or random forest - in parallel on the same dataset to compare against the deep learning models.
+  - Simpler models have fewer parameters and can work better when fewer training dtasets are available [16].
+    - [16] Hastie et al., 2001, Springer, The elements of statistical learning.</pre>
+</div>
+<div created="20190806190231384" modified="20190806194245248" tags="review [[machine learning]]" title="Zou et al, 2019, Nature Genetics-4" type="text/x-markdown">
+<pre>#4. Interpreting deep learning models
+
+- In many genomic applications, researchers are more interested in the biological mechanisms revealed by the predictive model rather than the prediction accuracy itself [13,17].
+  - [13] Zhou et al., 2015, Nat. Methods, Predicting effects of noncoding variants with deep learning-based sequence model.
+  - [17] Quang et al., 2016, Nucleic Acids Res., DanQ: a hybrid convolutional and recurrent deep neural network for quantifying the function of DNA seuqences.
+  - For example, the main motication for building accurate deep learning models to predict chromatin patterns is a hope to learn new gene-regulation grammar by interpreting the trained model.
+  - Although deep learning can achieve state-of-the-art accuracy, it is more challenging to interpret than the more standard statistical models.
+
+- The simplest method to interpret a neural network is analogous to **in silico mutagenesis**.
+  - Given a particular data point X, each feature of X (for example, mutating each nucleotide) can be systematically varied while the rest of the features are fixed, and how the network's output changes can be computationally expensive - the network recomputes the output for every mutation of X.
+  - A computationally tractable approximation to mutagenesis is to take the derivative of the network output with respect to each feature of X.
+  - This derivative can be computed in one back-propagation pass, and it conveys the sensitivity of the output to small perturbations in input features.
+  - Features with large positive or negative derivatives may be more influential to the outcome.
+
+- In strict terms, the derivative is a valid measure of influence for only infinitesimally small perturbations to the input, whereas in practice, researchers are interested in larger changes (for example, mutation of A to C).
+  - Several variations of the derivative-based interpretation methods have been developed to partially address this limitation
+  - for example, integrated gradient [18] and DeepLift [19]
+    - [18] Sundararajan et al., 2017, Arxiv, Axiomatic attribution for deep networks.
+    - [19] Shrikumar et al., 2017, Proc. Int. Conf. Mach. Learn., Learning important features through propagating activation differences.
+  - This goal is still currently an active area of research of reaserch.
+  - Other interpretation methods, sucha LIME [20] select a small number of features to explain why a prediction is made.
+    - [20] Ribeiro et al., 2016, AAAI Press, &quot;Why should I trust you?&quot;: explaining the preidctions of any classifier.
+
+- For a CNN, it is also possible to visualize each convolution filter as a heat map or position weight matrix-style logo image.
+  - These visulizations are useful to obtain a sense of what local features the network might be learning.
+  - A caveat is that multiple convolution filters might be learning partially redundant features, and how the local features interact is less clear, because such interaction depends on the higher layers of the network.
+</pre>
+</div>
+<div created="20190806194318023" modified="20190806202312856" tags="review [[machine learning]]" title="Zou et al, 2019, Nature Genetics-5" type="text/x-markdown">
+<pre># 5. Applications in genomics
+
+## 5-1. Functional genomics
+
+- A growing number of publications are presenting deep learning approaches and tools to study the genome (Fig. 2).
+
+- Functional genomics is a leading application domain of deep learning [21].
+  - [21] Park and Kellis, 2015, Nat. Biotechonol., Deep learning for regulatory genomics.
+  - Examples include predicting the sequnce specificify of DNA- and RNA-binding proteins and of enhancer and cis-regulatory regions, methylation status, gene expression and control of splicing.
+  - These tools are based on data generated by DNase I sequencing, assay for transposase-accessible chromatin using sequencing (ATAC-seq), chromatin immunoprecipitation (ChIP) sequencing, ChIP-on-chip, RNA immunoprecipitation sequencing, transcription-factor datasets and chromatin state [15,17,22,23,24]
+  - Similarly, the identification of transcription start sites as well as cis-regulatory/enhacer elements [25,26,27,28,29] can be executed with the addition of features from the Encyclopedia of DNA Elements (ENCODE) project, as well as transcription-start-site sequencing and RNA-seq signals.
+  - The methylation state of DNA, which also influences the expression of genes, has been inferred from three0dimensional genome topology (on the basis of Hi-C) and DNA sequence patterns [30].
+  - Nucleotide sequence and DNase I assay signals predict Hi-C contacts as 1-kb resolution [31].
+
+- Deep learning has been especially successful when applied to regulatory genomics, by using architectures directly adapted from modern computer vision and natrual-language-processing application [32].
+
+## 5-2. Gene expression regulation prediction
+
+- Different tools are able to extract transriptome patterns from large sets of gene expression data with the goal of estimating how much RNA is produced from a DNA template in a particular cell or condition [34,35,36,37].
+  - Deep learning can build predictive models of gene expression from genotype data [38]
+  - and can be used for studying the splicing-code model [39]
+  - as well as for the identification of long noncoding RNAs [40,41,42].
+  - Finally, deep learning has been used for the interpretation of regulatory control in single cells;
+    - for example, the detection of DNA methylation in single cells [30,43],
+    - and for the identification of subgroups of cells by improving the representation of single-cell RNA-seq data [44,45].
+
+## 5-3. Phenotype prediction
+
+- Predicing phenotypes from genetic data is also a major area of interest of deep learning.
+  - A first step: to specify what genetic variants are present in an individual genome.
+    - This probelm has been addressed by Deep Variant, which applies a CNN to make variant calls from short-read sequening.
+    - The method treats DNA alignments as an image with a performance that appears to exceed that of standard variant callers [46].
+  - Other methods for variant calling using more traditional DNA representations have also been developed [47,48,49].
+    - Long-read-sequencing technologies also use deep learning for base calling [50,51].
+
+- **Prioritizing variants** on the basis of the likelihood that they are pathogenic is important.
+  - Several methods that predict that pathogenicity of coding variants have been proposed [52,53,54].
+    - [52] Qi et al., 2018, BioRxiv, MVP: predicting pathogenicity of missense variants by deep neural networks.
+    - [53] Quang et al., 2015, Bioinformatics, DANN: a deep learning approach for annotating the pathogenicity of genetic variants.
+    - [54] Korvigo et al., 2018, PLoS One, Generalising better: applying deep learning to integrate deleteriousness prediction scores for whole-exome SNV studies.
+  - These approaches are essentially aggregators that combine prior non-deep learning predictors as well as features known to be useful for the prediction of variant pathogenicity.
+  - A more challenging problem, the prediction of functional consequences of noncoding variants, has seen some success via Deep SEA [13], a CNN trained to predict functional genomics features that can also be adapted to predict variant effects.
+    - [13] Zhou and Troyanskaya, 2015, Nat. Methods, Predicting effects of nondcoding variants with deep leaning-based sequence model.
+
+- In **cancer genomics**, deep learning can extract the high-level features between combinatorial somatic mutations and cancer types [55] and learn prognostic information from multicancer datasets [56].
+- Preliminary phenotype prediction in agricultural applications appears promising [57].
+  - However, a demonstration of the prediction of cmmon complex human disease phenotpes is only now emerging: Zhou et al. have recently reported the extension of Deep SEA to the study of regulaory variants in autism spectrum disorder [58].
+  - The same team has published **ExPecto**, the ab inito prediction of gene expression levels and variant effects from sequences from more than 200 tissues and cell types [59].
+    - [59] Zhou et al., 2018, Nat. Genet., Deep learning sequence-based ab initio prediction of variant effects on expression and disease risk.
+  - Sundaram et al. have tained a DNN by using hundreds of common variants from population sequencing of nonhuman primate species to identify pathogenic variants in rare human diseases [60]
+    - [60] Sundaram, et al., 2018, Nat. Genet., Predicting the clinical impact of human mutation with deep neural networks.
 </pre>
 </div>
 
