@@ -177,6 +177,8 @@ Error message and password prompt
 
 <li>$:/plugins/tiddlywiki/codemirror-mode-markdown</li>
 
+<li>$:/plugins/tiddlywiki/internals</li>
+
 <li>$:/plugins/tiddlywiki/markdown</li>
 
 <li>$:/plugins/tiddlywiki/powered-by-tiddlywiki</li>
@@ -204,6 +206,8 @@ Error message and password prompt
 <li>$:/state/tab--1963855381</li>
 
 <li>$:/state/tab--86143343</li>
+
+<li>$:/state/tab-1342078386</li>
 
 <li>$:/state/tab-1749438307</li>
 
@@ -9258,6 +9262,46 @@ Y chromosome - Nature 2014</pre>
     }
 }</pre>
 </div>
+<div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="" description="Tools for exploring the internals of TiddlyWiki" list="readme" plugin-type="plugin" title="$:/plugins/tiddlywiki/internals" type="application/json" version="5.1.17">
+<pre>{
+    &quot;tiddlers&quot;: {
+        &quot;$:/plugins/tiddlywiki/internals/EditTemplate/body/preview/parse-tree&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/tiddlywiki/internals/EditTemplate/body/preview/parse-tree&quot;,
+            &quot;tags&quot;: &quot;$:/tags/EditPreview&quot;,
+            &quot;list-after&quot;: &quot;$:/core/ui/EditTemplate/body/preview/output&quot;,
+            &quot;caption&quot;: &quot;parse tree&quot;,
+            &quot;text&quot;: &quot;\\define preview(mode)\n&lt;$wikify name=\&quot;preview-text\&quot; text={{!!text}} type={{!!type}} mode=\&quot;$mode$\&quot; output=\&quot;parsetree\&quot;&gt;\n&lt;pre&gt;\n&lt;code&gt;\n&lt;$text text=&lt;&lt;preview-text&gt;&gt;/&gt;\n&lt;/code&gt;\n&lt;/pre&gt;\n&lt;/$wikify&gt;\n\\end\n\n{{||$:/plugins/tiddlywiki/internals/EditTemplate/body/preview/shared}}\n&quot;
+        },
+        &quot;$:/plugins/tiddlywiki/internals/EditTemplate/body/preview/raw&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/tiddlywiki/internals/EditTemplate/body/preview/raw&quot;,
+            &quot;tags&quot;: &quot;$:/tags/EditPreview&quot;,
+            &quot;caption&quot;: &quot;raw HTML&quot;,
+            &quot;list-after&quot;: &quot;$:/plugins/tiddlywiki/internals/EditTemplate/body/preview/widget-tree&quot;,
+            &quot;text&quot;: &quot;&lt;pre&gt;&lt;code&gt;&lt;$view field=\&quot;text\&quot; format=\&quot;htmlwikified\&quot; /&gt;&lt;/code&gt;&lt;/pre&gt;\n&quot;
+        },
+        &quot;$:/plugins/tiddlywiki/internals/EditTemplate/body/preview/shared&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/tiddlywiki/internals/EditTemplate/body/preview/shared&quot;,
+            &quot;text&quot;: &quot;\\define body()\n\nMode: &lt;$select tiddler=\&quot;$(tv-mode-configuration)$\&quot; default=\&quot;block\&quot;&gt;\n&lt;option value=\&quot;inline\&quot;&gt;Inline&lt;/option&gt;\n&lt;option value=\&quot;block\&quot;&gt;Block&lt;/option&gt;\n&lt;/$select&gt;\n\n&lt;$macrocall $name=\&quot;preview\&quot; mode={{$(tv-mode-configuration)$}}/&gt;\n\\end\n\n&lt;div class=\&quot;tc-internal-tree-preview-wrapper\&quot;&gt;\n\n&lt;div class=\&quot;tc-internal-tree-preview\&quot;&gt;\n\n&lt;$vars tv-mode-configuration=&lt;&lt;qualify \&quot;$:/state/internals/preview/mode\&quot;&gt;&gt;&gt;\n\n&lt;&lt;body&gt;&gt;\n\n&lt;/$vars&gt;\n\n&lt;/div&gt;\n\n&lt;/div&gt;\n&quot;
+        },
+        &quot;$:/plugins/tiddlywiki/internals/EditTemplate/body/preview/widget-tree&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/tiddlywiki/internals/EditTemplate/body/preview/widget-tree&quot;,
+            &quot;tags&quot;: &quot;$:/tags/EditPreview&quot;,
+            &quot;caption&quot;: &quot;widget tree&quot;,
+            &quot;list-after&quot;: &quot;$:/plugins/tiddlywiki/internals/EditTemplate/body/preview/parse-tree&quot;,
+            &quot;text&quot;: &quot;\\define preview(mode)\n&lt;$wikify name=\&quot;preview-text\&quot; text={{!!text}} type={{!!type}} mode=\&quot;$mode$\&quot; output=\&quot;widgettree\&quot;&gt;\n&lt;pre&gt;\n&lt;code&gt;\n&lt;$text text=&lt;&lt;preview-text&gt;&gt;/&gt;\n&lt;/code&gt;\n&lt;/pre&gt;\n&lt;/$wikify&gt;\n\\end\n\n{{||$:/plugins/tiddlywiki/internals/EditTemplate/body/preview/shared}}\n&quot;
+        },
+        &quot;$:/plugins/tiddlywiki/internals/readme&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/tiddlywiki/internals/readme&quot;,
+            &quot;text&quot;: &quot;This plugin adds features to help explore the internals of TiddlyWiki:\n\n* New preview panes showing:\n** the parse tree\n** the widget tree\n** the raw HTML output\n\nThe first two include a dropdown for choosing block vs. inline parsing mode.\n&quot;
+        },
+        &quot;$:/plugins/tiddlywiki/internals/styles&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/tiddlywiki/internals/styles&quot;,
+            &quot;tags&quot;: &quot;$:/tags/Stylesheet&quot;,
+            &quot;text&quot;: &quot;\\rules only filteredtranscludeinline transcludeinline macrodef macrocallinline macrocallblock\n&quot;
+        }
+    }
+}</pre>
+</div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="" description="Markdown parser" list="readme usage" plugin-type="plugin" title="$:/plugins/tiddlywiki/markdown" type="application/json" version="5.1.17">
 <pre>{
     &quot;tiddlers&quot;: {
@@ -9500,8 +9544,11 @@ Y chromosome - Nature 2014</pre>
 <div created="20180626070438241" modified="20180626070446996" title="$:/state/tab--86143343">
 <pre>$:/core/ui/ControlPanel/Plugins/Installed/Themes</pre>
 </div>
-<div created="20180626070429735" modified="20180629131608990" title="$:/state/tab-1749438307">
-<pre>$:/core/ui/ControlPanel/Appearance</pre>
+<div created="20190809200343375" modified="20190809200344767" title="$:/state/tab-1342078386">
+<pre>$:/core/ui/ControlPanel/Plugins/Add/Plugins</pre>
+</div>
+<div created="20180626070429735" modified="20190809200332170" title="$:/state/tab-1749438307">
+<pre>$:/core/ui/ControlPanel/Plugins</pre>
 </div>
 <div created="20180629131502932" modified="20180629131507738" title="$:/state/tab-2065006209">
 <pre>$:/core/ui/ControlPanel/Saving/General</pre>
@@ -10236,13 +10283,13 @@ This plugin also requires the JSZip plugin ([[$:/plugins/tiddlywiki/jszip]]) to 
 <div author="JeremyRuston" core-version="&gt;=5.0.0" created="20180626070923564" dependents="" description="Basic theme" modified="20180626070923564" name="Vanilla" original-plugin-type="theme" original-tags="" original-title="$:/themes/tiddlywiki/vanilla" original-type="application/json" plugin-priority="0" server-url="https://tiddlywiki.com/library/v5.1.17/index.html" tags="$:/tags/RemoteAssetInfo" title="$:/temp/RemoteAssetInfo/https://tiddlywiki.com/library/v5.1.17/index.html/$:/themes/tiddlywiki/vanilla" type="text/vnd.tiddlywiki" version="5.1.17">
 <pre></pre>
 </div>
-<div created="20180626070925993" modified="20180629130131495" title="$:/temp/RemoteAssetSearch/$:/config/OfficialPluginLibrary">
+<div created="20180626070925993" modified="20190809200339959" title="$:/temp/RemoteAssetSearch/$:/config/OfficialPluginLibrary">
 <pre></pre>
 </div>
 <div created="20180629131549493" modified="20180708124623728" title="$:/temp/search">
 <pre></pre>
 </div>
-<div created="20180629130333008" modified="20180629130333008" tags="$:/tags/ServerConnection" title="$:/temp/ServerConnection/https://tiddlywiki.com/library/v5.1.17/index.html" url="https://tiddlywiki.com/library/v5.1.17/index.html">
+<div created="20190809200444805" modified="20190809200444805" tags="$:/tags/ServerConnection" title="$:/temp/ServerConnection/https://tiddlywiki.com/library/v5.1.17/index.html" url="https://tiddlywiki.com/library/v5.1.17/index.html">
 <pre>loaded</pre>
 </div>
 <div created="20180626071556558" modified="20180626071558100" title="$:/theme">
