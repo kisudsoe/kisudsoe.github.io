@@ -10,18 +10,17 @@ Hello! This is S Kim's personal blog spot. Please enjoy my knowledges!
 
 
 
-## About Me, Myself
+## About Me
 
 |                            Links                             | Description            |
 | :----------------------------------------------------------: | ---------------------- |
 | <img src="img/github-icon.png" height=40px />[My Profile](https://kisudsoe.github.io/README.html) | Descriptions about me. |
-| <img src="img/tiddly-icon.png" height=25px /> [MyTiddly](https://kisudsoe.github.io/Tiddly_ko.html) | My Korean essays here. |
+| <img src="img/tiddly-icon.png" height=25px /> [Tiddly_essays (Ko)](https://kisudsoe.github.io/Tiddly_ko.html) | My Korean essays.      |
+| <img src="img/tiddly-icon.png" height=25px /> [Tiddly_papers](https://kisudsoe.github.io/Tiddly_papers.html) | Paper read archive.    |
 
 
 
-## Story Archive 
-
-<img src="img/tiddly-icon.png" height=25px /> [Tiddly_papers](https://kisudsoe.github.io/Tiddly_papers.html): Draft archive
+## My articles
 
 | Settings                                                     | Genetics                                                     | Statistics                                                   | R                                                            |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
