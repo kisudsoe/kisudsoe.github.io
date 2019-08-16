@@ -143,6 +143,8 @@ Error message and password prompt
 
 <li>(Maren et al., 2018, AJHG) Mechanisms at GWAS loci</li>
 
+<li>(Nature) Sometimes Bayesian statistics are better</li>
+
 <li>(Raychaudhuri, 2011, Cell) Rare and Common variants</li>
 
 <li>(Zou et al, 2019, Nature Genetics) Deep lenarning in genomics</li>
@@ -441,6 +443,8 @@ Error message and password prompt
 
 <li>Review</li>
 
+<li>Statistics</li>
+
 <li>Table Of Contents</li>
 
 <li>TableOfContents</li>
@@ -467,10 +471,13 @@ Error message and password prompt
 <!--~~ Ordinary tiddlers ~~-->
 
 <div id="storeArea" style="display:none;">
-<div created="20190809195231099" modified="20190809195905489" tags="Review Genetics" title="(Corradin &amp; Scacheri, 2014, Genome Medicine) Enhancer variants">
-<pre>http://doi.org/10.1186/s13073-014-0085-3
+<div created="20190809195231099" modified="20190815190958358" tags="Review Genetics" title="(Corradin &amp; Scacheri, 2014, Genome Medicine) Enhancer variants">
+<pre>| !Tags | !List |
+| !Review |&lt;div class=&quot;tc-table-of-contents&quot;&gt;&lt;&lt;toc-selective-expandable 'Review'&gt;&gt;&lt;/div&gt; |
 
 !Enhancer variants: evaluating functions in common disease
+
+http://doi.org/10.1186/s13073-014-0085-3
 
 !!Abstract
 
@@ -494,8 +501,11 @@ Error message and password prompt
 
 !![[9. Conclusions and future chanllenges|Corradin &amp; Scacheri, 2014, Genome Medicine-9]]</pre>
 </div>
-<div created="20190809202808472" modified="20190809203404556" tags="Article GWAS" title="(Lee et al., 2013, AJHG) Rare variants meta-analysis">
-<pre>!General Framework for Meta-analysis of Rare Variants in Sequencing Association Studies
+<div created="20190809202808472" modified="20190815191048235" tags="Article GWAS" title="(Lee et al., 2013, AJHG) Rare variants meta-analysis">
+<pre>| !Tags | !List |
+| !Article |&lt;div class=&quot;tc-table-of-contents&quot;&gt;&lt;&lt;toc-selective-expandable 'Article'&gt;&gt;&lt;/div&gt; |
+
+!General Framework for Meta-analysis of Rare Variants in Sequencing Association Studies
 
 https://doi.org/10.1016/j.ajhg.2013.05.010
 
@@ -509,8 +519,11 @@ https://doi.org/10.1016/j.ajhg.2013.05.010
 
 !![[3. Discussion|Lee et al., 2013, AJHG-3]]</pre>
 </div>
-<div created="20190809200739665" modified="20190809202750925" tags="GWAS Article" title="(Maren et al., 2018, AJHG) Mechanisms at GWAS loci">
-<pre>!Deciphering the Emerging Complexities of Molecular MEchanisms at GWAS Loci
+<div created="20190809200739665" modified="20190815191056065" tags="GWAS Article" title="(Maren et al., 2018, AJHG) Mechanisms at GWAS loci">
+<pre>| !Tags | !List |
+| !Article |&lt;div class=&quot;tc-table-of-contents&quot;&gt;&lt;&lt;toc-selective-expandable 'Article'&gt;&gt;&lt;/div&gt; |
+
+!Deciphering the Emerging Complexities of Molecular MEchanisms at GWAS Loci
 
 https://doi.org/10.1016/j.ajhg.2018.10.001
 
@@ -530,10 +543,42 @@ https://doi.org/10.1016/j.ajhg.2018.10.001
 
 </pre>
 </div>
-<div created="20190809180604229" modified="20190812202802177" tags="Review Genetics GWAS done" title="(Raychaudhuri, 2011, Cell) Rare and Common variants" type="text/vnd.tiddlywiki">
-<pre>https://doi.org/10.1016/j.cell.2011.09.011
+<div created="20190815153505696" modified="20190815191113651" tags="Statistics" title="(Nature) Sometimes Bayesian statistics are better">
+<pre>| !Tags | !List |
+| !Statistics |&lt;div class=&quot;tc-table-of-contents&quot;&gt;&lt;&lt;toc-selective-expandable 'Statistics'&gt;&gt;&lt;/div&gt; |
+
+!Sometimes Bayesian statistics are better
+
+Stefan Herzog &amp; Dirk Ostwald, Nature volume 494, page 35 (07 February 2013) https://www.nature.com/articles/494035b
+
+
+!!1. 95% CI for classical statistics
+
+* David Vaux argues that experimental biologists should be better versed in classical statistics (Nature 492, 180-181; 2012).
+** He defines the 95% confidence interval (CI) as &quot;with 95% confidence, the population mean will lie in this interval&quot;, 
+** adding that it is commonly used &quot;to infer where the population mean lies, and to compare two populations&quot;.
+
+* However, a 95% CI merely tells us that if we were to sample from the population many times and calculate a 95% CI for each sample, 95% of the calculated CIs sould, on average, contain the true population mean.
+** Because classical statistics concern conditional probabilities of data based on assumed true parameter values (namely, the plausibility of the observed or more extreme data, given our assumptions), the 95% CI does not allow a probabilistic inference about &quot;where the population mean lies&quot;.
+
+!! 2. 95% CI for Bayesian statistics
+
+* Bayesian statistics, by contrast, provide conditional probabilities of parameter values - the plausibility of different parameter values - given the data.
+** Bayesian statistics therefore allow for probabilistic inferences about the true population mean and other parameters (J. K. Kruschke J. Exp. Psychol. Gen. http://doi.org/kdb; 2012).
+**  Researchers often confuse probabilities derived from classical statistics (P values, for example) with Bayesian posterior probabilities (G. Gigerenzer J. Socio-Econ. 33, 587–606; 2004).
+*** This is because the latter represent what scientists are ultimately interested in: the conditional probability of parameter values or hypotheses, given the data.
+
+* However, the distinction is unimportant for experiments in which N is 3 or less (where N is the number of independent samples).
+** Cell and molecular biologists could learn from physicist Ernest Rutherford, who said: “If your experiment needs statistics, you ought to have done a better experiment.”
+** Where N is small, they would do well to plot all data points, rather than showing any statistics, classical or Bayesian.</pre>
+</div>
+<div created="20190809180604229" modified="20190815191009197" tags="Review Genetics GWAS done" title="(Raychaudhuri, 2011, Cell) Rare and Common variants" type="text/vnd.tiddlywiki">
+<pre>| !Tags | !List |
+| !Review |&lt;div class=&quot;tc-table-of-contents&quot;&gt;&lt;&lt;toc-selective-expandable 'Review'&gt;&gt;&lt;/div&gt; |
 
 !Mapping Rare and Common Causal Alleles for Complex Human Diseases
+
+https://doi.org/10.1016/j.cell.2011.09.011
 
 !!Abstract
 
@@ -569,10 +614,13 @@ https://doi.org/10.1016/j.ajhg.2018.10.001
 |DNase I hypersensitive sites also flag open chromatin regions harboring promoters and enhancers (Sabo et al., 2006). |
 |One potential approach then to prioritize noncoding variants for follow up is to identify those that are in regions that have been predicted to be regulatory elements. |</pre>
 </div>
-<div created="20190805202650892" modified="20190809215341700" tags="Review Genetics [[Machine learning]] done" title="(Zou et al, 2019, Nature Genetics) Deep lenarning in genomics" type="text/vnd.tiddlywiki">
-<pre>`8/5/2019` https://doi.org/10.1038/s41588-018-0295-5
+<div created="20190805202650892" modified="20190815191017167" tags="Review Genetics [[Machine learning]] done" title="(Zou et al, 2019, Nature Genetics) Deep lenarning in genomics" type="text/vnd.tiddlywiki">
+<pre>| !Tags | !List |
+| !Review |&lt;div class=&quot;tc-table-of-contents&quot;&gt;&lt;&lt;toc-selective-expandable 'Review'&gt;&gt;&lt;/div&gt; |
 
 !A primer on deep learning in genomics
+
+`8/5/2019` https://doi.org/10.1038/s41588-018-0295-5
 
 !!Abstract
 
@@ -9497,7 +9545,7 @@ https://doi.org/10.1016/j.ajhg.2018.10.001
     &quot;tiddlers&quot;: {
         &quot;Untitled&quot;: {
             &quot;title&quot;: &quot;Untitled&quot;,
-            &quot;text&quot;: &quot;References&quot;
+            &quot;text&quot;: &quot;&lt;div class=\&quot;tc-table-of-contents\&quot;&gt;\r\n&lt;&lt;toc-selective-expandable 'Article'&gt;&gt;\r\n&lt;/div&gt;&quot;
         }
     }
 }</pre>
@@ -10058,7 +10106,7 @@ https://doi.org/10.1016/j.ajhg.2018.10.001
 <div created="20190812200850416" modified="20190812200850416" title="$:/state/image-picker/system--2114321968">
 <pre>show</pre>
 </div>
-<div created="20190805050243155" modified="20190812202119303" title="$:/state/showeditpreview">
+<div created="20190805050243155" modified="20190815190912645" title="$:/state/showeditpreview">
 <pre>no</pre>
 </div>
 <div created="20190806202306646" modified="20190809232658847" title="$:/state/sidebar">
@@ -10076,19 +10124,19 @@ https://doi.org/10.1016/j.ajhg.2018.10.001
 <div created="20190805045848352" modified="20190813025046054" title="$:/state/tab-1749438307">
 <pre>$:/core/ui/ControlPanel/Info</pre>
 </div>
-<div created="20190812154023739" modified="20190815005524628" title="$:/state/tab-1857887713">
-<pre>Article</pre>
+<div created="20190812154023739" modified="20190815203732893" title="$:/state/tab-1857887713">
+<pre>Review</pre>
 </div>
 <div created="20190805053838804" modified="20190809193325750" title="$:/state/tab/moresidebar-1850697562">
 <pre>$:/core/ui/MoreSideBar/Tags</pre>
 </div>
-<div created="20190805050127734" modified="20190813025418265" title="$:/state/tab/sidebar--595412856">
+<div created="20190805050127734" modified="20190815185818499" title="$:/state/tab/sidebar--595412856">
 <pre>$:/core/ui/SideBar/More</pre>
 </div>
 <div created="20190813025326242" modified="20190813025333049" title="$:/state/toc/TableOfContents-Review--118161433">
 <pre>close</pre>
 </div>
-<div created="20190815005545575" list="[[Table Of Contents]] [[UK Biobank]] [[Epidemiology - Fry et al., 2017, AJE]]" modified="20190815005545575" title="$:/StoryList">
+<div created="20190815203738163" list="[[Table Of Contents]] [[(Raychaudhuri, 2011, Cell) Rare and Common variants]] [[Raychaudhuri, 2011, Cell-1]]" modified="20190815203852780" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20190805050017364" modified="20190805050017364" title="$:/temp/HidePluginWarning">
@@ -11068,8 +11116,11 @@ This plugin also requires the JSZip plugin ([[$:/plugins/tiddlywiki/jszip]]) to 
 <div created="20190812154127406" modified="20190813025347592" tags="TOC TableOfContents" title="Article">
 <pre>&lt;$list filter=&quot;[tag[Article]sort[title]]&quot;&gt;&lt;$checkbox tag=&quot;done&quot; /&gt; &lt;$link to={{!!title}}&gt;&lt;&lt;currentTiddler&gt;&gt;&lt;/$link&gt;&lt;div class=&quot;tc-subtitle&quot;&gt;Posted &lt;$view field=&quot;modified&quot; format=&quot;relativedate&quot;/&gt;&lt;/div&gt;{{||$:/core/ui/ViewTemplate/tags}}&lt;/$list&gt;</pre>
 </div>
-<div created="20190815005617945" modified="20190815005759899" tags="ukb" title="Epidemiology - Fry et al., 2017, AJE">
-<pre>! Comparison of Sociodemographic and Health-Related Characteristics of UK Biobank PArticipants With Those of the General Population
+<div created="20190815005617945" modified="20190815191145630" tags="ukb" title="Epidemiology - Fry et al., 2017, AJE">
+<pre>| !Tags | !List |
+| !UKB |&lt;div class=&quot;tc-table-of-contents&quot;&gt;&lt;&lt;toc-selective-expandable 'ukb'&gt;&gt;&lt;/div&gt; |
+
+! Comparison of Sociodemographic and Health-Related Characteristics of UK Biobank PArticipants With Those of the General Population
 
 https://doi.org/10.1093/aje/kwx246
 
@@ -11078,7 +11129,7 @@ https://doi.org/10.1093/aje/kwx246
 <div created="20190812154202707" modified="20190813025428203" tags="TOC TableOfContents" title="Journal Club">
 <pre>&lt;$list filter=&quot;[tag[JC]sort[title]]&quot;&gt;&lt;$checkbox tag=&quot;done&quot; /&gt; &lt;$link to={{!!title}}&gt;&lt;&lt;currentTiddler&gt;&gt;&lt;/$link&gt;&lt;div class=&quot;tc-subtitle&quot;&gt;Posted &lt;$view field=&quot;modified&quot; format=&quot;relativedate&quot;/&gt;&lt;/div&gt;{{||$:/core/ui/ViewTemplate/tags}}&lt;/$list&gt;</pre>
 </div>
-<div created="20190809184231789" modified="20190812202150513" title="Raychaudhuri, 2011, Cell-1">
+<div created="20190809184231789" modified="20190815203903525" title="Raychaudhuri, 2011, Cell-1">
 <pre>[[Raychaudhuri, 2011, Cell]]
 
 !1. Population Genetics of Rare and Common Alleles
@@ -11096,7 +11147,7 @@ https://doi.org/10.1093/aje/kwx246
 
 * Genetic linkage is the tendency of alleles at nearby loci to be transmitted together; two nearby loci are in linkage idsequilibrium (LD) when recombination events occur between them very infrequently.
 ** Two common metrics quantify pairwise LD between biallelic markers (see Figure 1A).
-** The R-squared (r^2^) between two markers is their correlation across chromosomes within a population.
+** The R-squared (r^^2^^) between two markers is their correlation across chromosomes within a population.
 * If two markers have r2 = 1, then alleles are always in phase (or in //cis//) with each other;
 ** in a genetic study, their association statistics will be identical.
 * The D-prime (D') between two markers is inversely related to the fraction of chromosomes that have had historical recombination between them.
@@ -11173,10 +11224,13 @@ Figure 2. Common Variants and Fine-Mapping with Conditional Haplotype Analysis
 <div created="20190812154109720" modified="20190813025324364" tags="TableOfContents TOC" title="Review">
 <pre>&lt;$list filter=&quot;[tag[Review]sort[title]]&quot;&gt;&lt;$checkbox tag=&quot;done&quot; /&gt; &lt;$link to={{!!title}}&gt;&lt;&lt;currentTiddler&gt;&gt;&lt;/$link&gt;&lt;div class=&quot;tc-subtitle&quot;&gt;Posted &lt;$view field=&quot;modified&quot; format=&quot;relativedate&quot;/&gt;&lt;/div&gt;{{||$:/core/ui/ViewTemplate/tags}}&lt;/$list&gt;</pre>
 </div>
-<div created="20190805045827414" modified="20190815005342393" tags="TOC" title="Table Of Contents" type="text/vnd.tiddlywiki">
+<div created="20190815185738170" modified="20190815185742260" title="Statistics">
+<pre>&lt;$list filter=&quot;[tag[Statistics]sort[title]]&quot;&gt;&lt;$checkbox tag=&quot;done&quot; /&gt; &lt;$link to={{!!title}}&gt;&lt;&lt;currentTiddler&gt;&gt;&lt;/$link&gt;&lt;div class=&quot;tc-subtitle&quot;&gt;Posted &lt;$view field=&quot;modified&quot; format=&quot;relativedate&quot;/&gt;&lt;/div&gt;{{||$:/core/ui/ViewTemplate/tags}}&lt;/$list&gt;</pre>
+</div>
+<div created="20190805045827414" modified="20190815153503282" tags="TOC" title="Table Of Contents" type="text/vnd.tiddlywiki">
 <pre>Here is a list of papers what I have read.
 
-&lt;&lt;tabs &quot;Review Article [[UK Biobank]] [[Journal Club]]&quot; &quot;Review&quot;&gt;&gt;
+&lt;&lt;tabs &quot;Review Article Statistics [[UK Biobank]] [[Journal Club]]&quot; &quot;Review&quot;&gt;&gt;
 </pre>
 </div>
 <div caption="Contents" created="20190813025149871" list-after="$:/core/ui/SideBar/Open" modified="20190813025313517" tags="$:/tags/SideBar" title="TableOfContents" type="text/vnd.tiddlywiki">
