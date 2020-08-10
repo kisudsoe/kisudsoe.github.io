@@ -101,7 +101,7 @@ docker commit -a "jjy" 7685afdc7f4d kisudsoe/postgwas:latest
 Error, Ref: https://github.com/codenvy/codenvy/issues/2427
 
 ```bash
-docker run -v "C:\Users\kisud\OneDrive\People\김정기박사님:/data" -p 8888:8888 kisudsoe/postgwas jupyter lab --ip=0.0.0.0 --port=8888 --allow-root
+docker run -v "C:\working\directory\path:/data" -p 8888:8888 kisudsoe/postgwas jupyter lab --ip=0.0.0.0 --port=8888 --allow-root
 
 docker run --rm -p 8888:8888 kisudsoe/postgwas jupyter lab --ip=0.0.0.0 --port=8888 --allow-root
 ```
