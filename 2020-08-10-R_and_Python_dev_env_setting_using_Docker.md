@@ -1,5 +1,7 @@
 # R and Python Development Environment Setting Using Docker
 
+By Seungsoo Kim, 2020-08-15-edit2
+
 
 
 # 1. Installs
@@ -22,8 +24,7 @@ How to update R?
 
 ```bash
 $ docker run -it kisudsoe/postgwas
-container$ apt update
-container$ apt -y upgrade
+container$ apt update && apt -y upgrade
 container$ apt -y install r-base
 container$ R # Check R version
 R> q() # Exit R command
@@ -87,7 +88,7 @@ IRkernel::installspec(name='ir',displayname='R')
 In CMD:
 
 ```CMD
-docker ps
+docker ps #< Get container ID
 docker stop 7685afdc7f4d
 docker commit -a "jjy" 7685afdc7f4d kisudsoe/postgwas:latest
 ```
