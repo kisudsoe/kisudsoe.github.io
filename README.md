@@ -1,6 +1,6 @@
 # [<img src="img/favicon.png" width="60px" />](http://kisudsoe.github.io) About me
 
-Name:       Kim SS
+Name:       Seungsoo Kim, Ph.D.
 
 My work:  Bioinformatics for Aging research
 
@@ -8,7 +8,7 @@ My work:  Bioinformatics for Aging research
 
 ## My bio
 
-I am now a member of Functional Genomics Laboratory. I want understand how living creatures aging and how retard it. To understand the matters, I'm trying to compile and mine bio-big-data. From 2007, I was trained for analyzing microarray data. My current research focus is on chronological aging process as well as longevity (e.g. Caloric Restriction) machanism in mice major tissues and yeast cells.
+I am now a member of Functional Genomics Laboratory. I am trying to understand how living creatures aging and how to retard it. To understand the matters, I'm mining public bio-big-data. From 2007, I was trained for analyzing microarray data. My current research focus is on chronological aging process as well as longevity (e.g. Caloric Restriction) machanism in mice major tissues and yeast cells.
 
 | <img src="img/url-icon.png" height=20px/> [Homepage](http://ckaging.korea.ac.kr) | [<img src="img/github-icon.png" height=35px/>Github](https://github.com/kisudsoe) |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -18,9 +18,9 @@ I am now a member of Functional Genomics Laboratory. I want understand how livin
 
 ## My research interests are:
 
-- Aging/Longevity biology
-- Meta-analysis using transcriptome data
-- Molecular signaling networks
+- Aging/Longevity of systems biology
+- Meta-analysis using (epi)genomics data
+- Age-related diseases and traits
 - Evolutionary conserved features
 
 
@@ -30,8 +30,8 @@ I am now a member of Functional Genomics Laboratory. I want understand how livin
 1. Transcriptome data analysis
 2. Statistical association test
 3. Pathway construction for signaling and metabolic
-4. Using R and Python
+4. Using R, Python, and SQL
 
 ---
 
-By Kim SS @ 2017-2019
+By Kim SS @ 2017-2020
